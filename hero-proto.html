@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#000000">
-<title>The Ultimate Health Project — Blueprint to Body</title>
+<title>The Ultimate Health Project Blueprint to Body</title>
 <meta name="description" content="Scroll-driven hero: a gold blueprint grid assembles into an energized human silhouette. Goals are what you wish for. Systems are what you build.">
 
 <!-- Fonts are OPTIONAL and NON-BLOCKING. The engine never depends on them loading;
@@ -228,7 +228,7 @@
       <div class="hero-overlay" id="heroOverlay">
         <div class="ov-brand">The Ultimate Health Project</div>
         <div class="ov-main">
-          <div class="ov-eyebrow">Goals are what you wish for — systems are what you build</div>
+          <div class="ov-eyebrow">Goals are what you wish for systems are what you build</div>
           <h1 class="ov-headline">Now build the<br><em>body</em> that keeps up.</h1>
           <div class="ov-cue"><span class="rule"></span>Scroll to assemble</div>
         </div>
@@ -240,9 +240,9 @@
     <span class="after-eyebrow">The System</span>
     <h2>Built like a system, not a wish.</h2>
     <div class="after-grid">
-      <p><span class="idx">01 — Assess</span>We map how you actually eat, move, and recover — then find the two or three levers that move everything else.</p>
-      <p><span class="idx">02 — Build</span>Small, repeatable habits stacked into a routine that survives a busy week. No heroics, no crash diets.</p>
-      <p><span class="idx">03 — Sustain</span>Weekly accountability keeps the structure standing long after motivation fades. The body follows the system.</p>
+      <p><span class="idx">01 Assess</span>We map how you actually eat, move, and recover then find the two or three levers that move everything else.</p>
+      <p><span class="idx">02 Build</span>Small, repeatable habits stacked into a routine that survives a busy week. No heroics, no crash diets.</p>
+      <p><span class="idx">03 Sustain</span>Weekly accountability keeps the structure standing long after motivation fades. The body follows the system.</p>
     </div>
   </section>
 
@@ -283,7 +283,7 @@
      ========================================================================= */
 
   /* -------------------------------------------------------------------------
-     ProceduralFrameSource — USED NOW.  (faux-3D volumetric)
+     ProceduralFrameSource USED NOW.  (faux-3D volumetric)
      A blueprint floor in perspective assembles a VOLUMETRIC point-cloud human
      that rotates in 3D and resolves into a glowing figure. Pure Canvas 2D:
      every point carries (x,y,z), is spun on the vertical axis by t, tilted by a
@@ -638,7 +638,7 @@
   };
 
   /* -------------------------------------------------------------------------
-     ImageSequenceFrameSource — STUB FOR LATER (present + functional).
+     ImageSequenceFrameSource STUB FOR LATER (present + functional).
      Loads `count` frames named f_001.webp .. f_NNN.webp from basePath and
      draws the frame nearest to t, letterboxed to cover the viewport.
 
@@ -689,7 +689,7 @@
   };
 
   /* =========================================================================
-     HeroScrubber — pins the hero, maps scroll -> t, rAF-throttled, DPR-capped,
+     HeroScrubber pins the hero, maps scroll -> t, rAF-throttled, DPR-capped,
      paused when hidden or off-screen. Handles static/reduced fallbacks.
      ========================================================================= */
   function HeroScrubber(opts){
@@ -858,7 +858,7 @@
       this.inView = true;
     }
 
-    // First paint immediately (blueprint at current t) — no loader, no opacity gate.
+    // First paint immediately (blueprint at current t) no loader, no opacity gate.
     this._draw(performance.now());
     this._activate();
   };

@@ -1,4 +1,4 @@
-# Local design docs / specs — not part of the shipped site
+# Local design docs / specs not part of the shipped site
 docs/
 
 # Playwright MCP working directory (page snapshots, console logs, screenshots)

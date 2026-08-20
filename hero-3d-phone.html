@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#000000">
-<title>The Ultimate Health Project — AI Fitness Assistant for Busy Professionals</title>
-<meta name="description" content="UHP is the AI accountability coaching system for busy professionals — personalised nutrition, progress tracking, and a coach that keeps you consistent.">
+<title>The Ultimate Health Project AI Fitness Assistant for Busy Professionals</title>
+<meta name="description" content="UHP is the AI accountability coaching system for busy professionals personalised nutrition, progress tracking, and a coach that keeps you consistent.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -170,14 +170,14 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
 .pr:nth-child(3) { width:480px; height:800px; border-color:rgba(201,168,76,.025); animation-delay:1.6s; }
 
 /* ═══════════════════════════════════════════════════════
-   THE PHONE — this IS the expanding element.
+   THE PHONE this IS the expanding element.
    It starts as a phone, morphs into the full viewport.
    All transforms & sizing driven by JS via inline style.
 ═══════════════════════════════════════════════════════ */
 #phone {
   position:absolute;
   z-index:5;
-  /* initial phone dimensions — JS will override */
+  /* initial phone dimensions JS will override */
   width:290px;
   height:580px;
   border-radius:46px;
@@ -198,7 +198,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
 }
 
 /* ═══════════════════════════════════════════════════════
-   CHAT UI — lives inside #phone, flexes naturally
+   CHAT UI lives inside #phone, flexes naturally
    as the phone grows to fill the viewport
 ═══════════════════════════════════════════════════════ */
 .chat-wrap {
@@ -208,7 +208,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
   position:relative;
 }
 
-/* Status bar — hidden when phone fills screen */
+/* Status bar hidden when phone fills screen */
 .phone-sb {
   display:flex; justify-content:space-between; align-items:center;
   padding:14px 20px 8px; flex-shrink:0;
@@ -219,7 +219,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
 .phone-sb.hidden { opacity:0; height:0; padding-top:0; padding-bottom:0; pointer-events:none; }
 .sb-right { display:flex; align-items:center; gap:5px; }
 
-/* Dynamic island — hidden when phone fills screen */
+/* Dynamic island hidden when phone fills screen */
 .d-island {
   position:absolute; top:0; left:50%; transform:translateX(-50%);
   width:126px; height:36px; background:#050505; border-radius:0 0 22px 22px;
@@ -417,7 +417,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
   <div id="hero-text">
     <p class="eyebrow">The Ultimate Health Project</p>
     <h1 class="headline">Health that<br>fits your<br><em>schedule</em></h1>
-    <p class="subline">The AI coaching system for busy professionals — personalised nutrition, habit accountability, and a coach that keeps you consistent.</p>
+    <p class="subline">The AI coaching system for busy professionals personalised nutrition, habit accountability, and a coach that keeps you consistent.</p>
     <div class="cta-row">
       <a href="#" class="btn-primary">Book a Free Call</a>
       <a href="#" class="btn-ghost">See How It Works</a>
@@ -437,7 +437,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
     <div class="pr"></div>
   </div>
 
-  <!-- ═══ THE PHONE — one element that morphs to full screen ═══ -->
+  <!-- ═══ THE PHONE one element that morphs to full screen ═══ -->
   <div id="phone">
 
     <!-- Dynamic island (fades as phone expands) -->
@@ -465,7 +465,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
       </div>
     </div>
 
-    <!-- Chat UI — flexes naturally as phone grows -->
+    <!-- Chat UI flexes naturally as phone grows -->
     <div class="chat-wrap">
 
       <!-- Chat header -->
@@ -514,7 +514,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
             </svg>
           </div>
           <div class="bubble bot" data-trigger="0.25">
-            <div>Morning Alex. You're on a 5-day streak — great work this week.</div>
+            <div>Morning Alex. You're on a 5-day streak great work this week.</div>
             <div class="bubble-time">9:41 AM</div>
           </div>
         </div>
@@ -538,7 +538,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
         </div>
 
         <div class="bubble user" data-trigger="0.40" style="align-self:flex-end">
-          <div>I've got a business lunch today — any tips?</div>
+          <div>I've got a business lunch today any tips?</div>
           <div class="bubble-time" style="text-align:right">9:43 AM</div>
         </div>
 
@@ -595,7 +595,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
 
 <script>
 /* ════════════════════════════════════════════════════════════
-   UHP 3D PHONE HERO — the phone IS the expanding element.
+   UHP 3D PHONE HERO the phone IS the expanding element.
    No overlay, no mirror. One box morphs from phone → fullscreen.
 
    SCROLL PHASES (p = 0 → 1):
@@ -673,7 +673,7 @@ body { font-family:var(--ff-b); background:var(--bg); color:var(--text); overflo
     // Vertical rise: starts 100vh below
     const tY = lerp(100, 0, p1e); // in vh
 
-    // Dramatic multi-axis spin — collapses to upright
+    // Dramatic multi-axis spin collapses to upright
     const rotX = lerp(45,  0,  easeOutCubic(p1));
     const rotY = lerp(-540, 0, easeOutCubic(p1));   // 1.5 full rotations
     const rotZ = lerp(20,  0,  easeOutCubic(p1));
