@@ -67,14 +67,16 @@ body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
 .nl a:hover,.nl a.active{color:var(--white)}
 .nav-cta{padding:10px 24px;background:var(--gold);color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:none;white-space:nowrap}
 .nav-cta:hover{background:var(--gold-lt);transform:translateY(-1px)}
-@media(max-width:900px){.nl{display:none}}
+@media(max-width:900px){.nl{display:none}}@media(max-width:600px){.nav-cta{display:none}}
 .hbg{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
 .hbg span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px}
 @media(max-width:768px){.hbg{display:flex}}
 .mm{position:fixed;inset:0;z-index:98;background:rgba(0,0,0,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;opacity:0;visibility:hidden;transition:all .4s var(--ease)}
 .mm.open{opacity:1;visibility:visible}
-.mm a{font-family:var(--font);font-size:52px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s;line-height:1.2;cursor:none}
+.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s;line-height:1.2;cursor:none}
 .mm a:hover{color:var(--white)}
+.mm a.btn-w{color:var(--black);font-size:16px}
+.mm a.btn-w:hover{color:var(--black)}
 .mm-x{position:absolute;top:24px;right:28px;font-size:28px;color:rgba(255,255,255,.3);cursor:none}
 
 /* ─── HERO & SCOREBOARD ─────────────────────────────────────── */
