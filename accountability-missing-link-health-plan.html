@@ -9,16 +9,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<meta name="description" content="You know what to do. So why is it so hard to stay consistent? Knowledge isn’t the problem — most people who can’t stick to a health routine are lacking structure, not information.">
+<meta name="description" content="You know what to do. So why is it so hard to stay consistent? Most people who can’t stick to a health routine aren’t lacking information. They’re lacking structure.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--black:#000;--bg:#0c0c0c;--surface:#141414;--card:#181818;--beige:#C4C0B7;--beige2:#ABA89F;--white:#F5F5F0;--text:#DEDAD4;--muted:#88847E;--dim:#4E4C48;--orange:#C9A84C;--orange2:#b8962e;--gold:#C9A84C;--border:rgba(196,192,183,.08);--border2:rgba(196,192,183,.15);--ease:cubic-bezier(.22,.61,.36,1);--ease-out:cubic-bezier(.16,1,.3,1);--font:'Barlow Condensed','Arial Narrow',sans-serif;--body:'Inter',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden;cursor:none}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:none;border:none;background:none;color:inherit}
-.cur{position:fixed;width:10px;height:10px;background:var(--white);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cur-f{position:fixed;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .4s var(--ease-out),height .4s var(--ease-out),border-color .4s}
-body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.028;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='1'/></svg>");mix-blend-mode:overlay}
 .sprog{position:fixed;top:0;left:0;right:0;height:2px;z-index:101;background:rgba(255,255,255,.06)}.sprog-bar{height:100%;background:var(--orange);width:0;transition:width .08s linear}
 .pt{position:fixed;inset:0;z-index:500;background:var(--black);transform:scaleY(1);transform-origin:top;transition:transform .65s cubic-bezier(.76,0,.24,1);pointer-events:none}.pt.done{transform:scaleY(0);transform-origin:bottom}
@@ -29,21 +26,21 @@ body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
 .wrap{max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.wrap{padding:0 24px}}
 .sec{padding:96px 0}@media(max-width:768px){.sec{padding:64px 0}}
 .lbl{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--beige)}.lbl::before{content:'';width:28px;height:1px;background:var(--beige);flex-shrink:0}
-.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:none}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
-.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:none}.bo:hover{background:var(--beige);color:var(--black)}
+.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
+.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bo:hover{background:var(--beige);color:var(--black)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;transition:background .4s var(--ease),border-color .4s}.nav.scrolled{background:rgba(12,12,12,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.nav-in{padding:0 24px}}
-.nav-logo{display:flex;align-items:center;gap:14px;cursor:none}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
-.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:none}.nl a:hover,.nl a.active{color:var(--white)}
-.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:none;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
+.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:pointer}.nl a:hover,.nl a.active{color:var(--white)}
+.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:pointer;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
 @media(max-width:900px){.nl{display:none}}@media(max-width:600px){.nc{display:none}}
 .hbg{display:none;flex-direction:column;gap:5px;padding:8px}.hbg span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px}@media(max-width:768px){.hbg{display:flex}}
 .mm{position:fixed;inset:0;z-index:98;background:rgba(8,8,8,.98);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;visibility:hidden;transition:all .4s var(--ease)}.mm.open{opacity:1;visibility:visible}
-.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:none}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:none;line-height:1}
+.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:pointer}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:pointer;line-height:1}
 footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0 40px}
 .ft-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:64px}
 .ft-col h6{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--beige);margin-bottom:20px;opacity:.8}
-.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:none}.ft-col a:hover{color:var(--white)}
+.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:pointer}.ft-col a:hover{color:var(--white)}
 .ft-bot{border-top:1px solid var(--border);padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.ft-bot p{font-size:12px;color:var(--muted);letter-spacing:.04em}
 @media(max-width:900px){.ft-g{grid-template-columns:1fr 1fr;gap:40px}.ft-bc{grid-column:1/-1}}@media(max-width:600px){.ft-g{grid-template-columns:1fr}.ft-bot{flex-direction:column;text-align:center}}
 
@@ -79,6 +76,29 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 .art-table th{background:var(--surface);color:var(--gold);font-family:var(--font);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:12px}
 .art-table td:first-child{color:var(--white);font-weight:700;white-space:nowrap}
 @media(max-width:600px){.art-table{font-size:13px;min-width:460px}.art-table th,.art-table td{padding:8px 10px}}
+.art-body h3{font-size:clamp(19px,2.2vw,22px);font-weight:800;text-transform:uppercase;color:var(--white);letter-spacing:.01em;line-height:1.25;margin:1.8em 0 .6em}
+.art-body h4{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);line-height:1.4;margin:1.6em 0 .5em}
+.art-body strong{color:var(--white);font-weight:700}
+.art-body a:not(.bp):not(.bo){color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.art-body a.art-src{display:inline-block;margin-left:4px;padding:1px 9px;font-size:11px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--muted);border:1px solid var(--border2);border-radius:999px;line-height:1.7;vertical-align:2px;transition:color .3s,border-color .3s}
+.art-body a.art-src:hover{color:var(--gold);border-color:var(--gold)}
+.art-fig{margin:2.2em 0}
+.art-fig img{width:100%;height:auto;border-radius:14px;display:block;background:var(--surface)}
+.art-fig figcaption{margin-top:10px;font-size:12px;color:var(--muted);text-align:center;letter-spacing:.03em}
+.art-fig figcaption a{color:var(--muted)!important}
+.art-schedule{margin:1.4em 0 1.8em;border-left:2px solid var(--gold);padding-left:22px}
+.art-sched-item{margin-bottom:1.1em}
+.art-sched-item:last-child{margin-bottom:0}
+.art-sched-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.art-sched-item p{margin:0;line-height:1.7}
+.art-steps{display:flex;flex-direction:column;gap:14px;margin:1.6em 0 2em}
+.art-step{padding:20px 24px;background:var(--surface);border:1px solid var(--border2);border-radius:14px}
+.art-step-time{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.art-step-title{font-family:var(--font);font-size:21px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--white);margin:4px 0 6px}
+.art-step p{margin:0;font-size:16px;line-height:1.7}
+.art-body ol.art-refs li{counter-increment:refs;position:relative;padding-left:28px}
+.art-body ol.art-refs li::before{content:counter(refs)'.';position:absolute;left:0;color:var(--gold);font-weight:700}
+@media(max-width:600px){.art-body{font-size:16.5px}.art-step{padding:16px 18px}.art-schedule{padding-left:16px}}
 
 /* RELATED */
 .rel-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-radius:16px;overflow:hidden;margin-top:24px}
@@ -99,8 +119,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 </style>
 </head>
 <body>
-<div class="cur" id="cur"></div>
-<div class="cur-f" id="curf"></div>
 <div class="grain"></div>
 <div class="sprog"><div class="sprog-bar" id="pb"></div></div>
 <div class="pt" id="pt"></div>
@@ -122,7 +140,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
       <a href="blog.html" class="art-back">&larr; The UHP Journal</a>
       <div><span class="art-cat-pill">Accountability</span></div>
       <h1 class="art-title">Why Accountability May Be the Missing Link in Your Health Plan</h1>
-      <p class="art-dek">You probably already know you should eat better, train regularly and get enough sleep. The hard part is doing it when business gets busy. That's where the right accountability system can make a difference.</p>
+      <p class="art-dek">You probably already know you should eat better, train regularly and get enough sleep. The hard part is doing it when business gets busy. That’s where the right accountability system can make a difference.</p>
       <div class="art-meta"><span>April 2026</span><div class="art-meta-dot"></div><span>7 min read</span><div class="art-meta-dot"></div><span>Accountability</span></div>
     </div>
   </div>
@@ -131,43 +149,235 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 <!-- BODY -->
 <section class="sec" style="background:var(--bg);padding-top:24px">
   <div class="art-wrap">
-    <div class="art-body rv">
-<p>Monday starts well. You've planned three workouts. Lunch is sorted. You're going to get to bed earlier. This is the week you're getting back into a routine. Then Tuesday's meeting runs over. Wednesday becomes a 12-hour day. Thursday there's a client dinner. One of the kids gets sick. Friday arrives and the three workouts you planned have become one. So you tell yourself: “I'll start properly again Monday.” Sound familiar? For many business owners, the problem isn't a complete lack of knowledge. You probably don't need someone to tell you for the hundredth time that exercise, decent nutrition and sleep are important. The harder part is staying consistent when your calendar stops cooperating. That's where accountability can become useful. But not the kind where someone simply asks: “Did you do your workout?” Good accountability should help you answer three much more useful questions: What did I plan? What actually happened? What needs to change? That's the difference between repeatedly starting again and gradually building a system that works.</p>
+    <div class="art-body">
+<p>Monday starts well.</p>
+<p>You’ve planned three workouts.</p>
+<p>Lunch is sorted.</p>
+<p>You’re going to get to bed earlier.</p>
+<p>This is the week you’re getting back into a routine.</p>
+<p>Then Tuesday’s meeting runs over.</p>
+<p>Wednesday becomes a 12-hour day.</p>
+<p>Thursday there’s a client dinner.</p>
+<p>One of the kids gets sick.</p>
+<p>Friday arrives and the three workouts you planned have become one.</p>
+<p>So you tell yourself:</p>
+<p><strong>“I’ll start properly again Monday.”</strong></p>
+<p>Sound familiar?</p>
+<p>For many business owners, the problem isn’t a complete lack of knowledge.</p>
+<p>You probably don’t need someone to tell you for the hundredth time that exercise, decent nutrition and sleep are important.</p>
+<p><strong>The harder part is staying consistent when your calendar stops cooperating.</strong></p>
+<p>That’s where accountability can become useful.</p>
+<p>But not the kind where someone simply asks:</p>
+<p><strong>“Did you do your workout?”</strong></p>
+<p>Good accountability should help you answer three much more useful questions:</p>
+<p><strong>What did I plan?</strong></p>
+<p><strong>What actually happened?</strong></p>
+<p><strong>What needs to change?</strong></p>
+<p>That’s the difference between repeatedly starting again and gradually building a system that works.</p>
 <h2>Motivation gets you started. Systems help when motivation disappears.</h2>
-<p>Think about January. Gyms are busy. People are motivated. New training programs start. Food improves. Everyone has a plan. Then normal life returns. That's the problem with building a health strategy around motivation. You cannot guarantee you'll feel motivated at 6:30AM on a Tuesday after a poor night's sleep. What you can do is make the behaviour more specific. Compare: “I'll exercise more this week.” with: “I'll strength train Tuesday and Thursday at 6:30AM before my first meeting.” The second gives you something concrete to act on. More importantly, it gives you something you can review. Did it happen? If not, why? And what should change next week? That's where accountability starts becoming valuable.</p>
-<h2>Accountability isn't about being told off</h2>
-<p>This distinction matters. Accountability shouldn't feel like school. You don't need someone waiting to tell you that you “failed” because you missed Wednesday's workout. That's not particularly useful. Instead, think of accountability like reviewing a business KPI. Imagine you planned three training sessions but completed one. You could say: “I have no discipline.” Or you could ask: “What happened?” Maybe two sessions were scheduled on your busiest mornings. Maybe you travelled. Maybe you slept badly. Maybe three sessions simply wasn't realistic that week. That's useful information. Now you can change something. Move the sessions. Shorten them. Change the training. Reduce the target during particularly busy weeks. Accountability should produce feedback, not guilt. You're not trying to prove you can follow a perfect plan. You're trying to build one you can actually follow.</p>
+<p>Think about January.</p>
+<p>Gyms are busy.</p>
+<p>People are motivated.</p>
+<p>New training programs start.</p>
+<p>Food improves.</p>
+<p>Everyone has a plan.</p>
+<p>Then normal life returns.</p>
+<p>That’s the problem with building a health strategy around motivation.</p>
+<p>You cannot guarantee you’ll feel motivated at 6:30AM on a Tuesday after a poor night’s sleep.</p>
+<p>What you can do is make the behaviour more specific.</p>
+<p>Compare:</p>
+<p><strong>“I’ll exercise more this week.”</strong></p>
+<p>with:</p>
+<p><strong>“I’ll strength train Tuesday and Thursday at 6:30AM before my first meeting.”</strong></p>
+<p>The second gives you something concrete to act on.</p>
+<p>More importantly, it gives you something you can <strong>review</strong>.</p>
+<p>Did it happen?</p>
+<p>If not, why?</p>
+<p>And what should change next week?</p>
+<p>That’s where accountability starts becoming valuable.</p>
+<h2>Accountability isn’t about being told off</h2>
+<p>This distinction matters.</p>
+<p>Accountability shouldn’t feel like school.</p>
+<p>You don’t need someone waiting to tell you that you “failed” because you missed Wednesday’s workout.</p>
+<p>That’s not particularly useful.</p>
+<p>Instead, think of accountability like reviewing a business KPI.</p>
+<p>Imagine you planned three training sessions but completed one.</p>
+<p>You could say:</p>
+<p>“I have no discipline.”</p>
+<p>Or you could ask:</p>
+<p><strong>“What happened?”</strong></p>
+<p>Maybe two sessions were scheduled on your busiest mornings.</p>
+<p>Maybe you travelled.</p>
+<p>Maybe you slept badly.</p>
+<p>Maybe three sessions simply wasn’t realistic that week.</p>
+<p>That’s useful information.</p>
+<p>Now you can change something.</p>
+<p>Move the sessions.</p>
+<p>Shorten them.</p>
+<p>Change the training.</p>
+<p>Reduce the target during particularly busy weeks.</p>
+<p><strong>Accountability should produce feedback, not guilt.</strong></p>
+<p>You’re not trying to prove you can follow a perfect plan.</p>
+<p>You’re trying to build one you can actually follow.</p>
 <h2>The UHP Accountability Loop</h2>
-<p>Keep it simple: PLAN → TRACK → REVIEW → ADJUST Four steps. Repeated every week.</p>
-<h2>1. PLAN: Focus on behaviours you can actually measure</h2>
-<p>“Get healthier” isn't particularly useful. Neither is: “Exercise more.” Instead, choose behaviours you can actually complete. For example:</p>
-<ul><li>Strength train twice this week</li><li>Walk for 20 minutes after lunch three times</li><li>Prepare tomorrow's lunch the night before</li><li>Be in bed by 10:30PM four nights this week</li></ul>
-<p>You don't need ten targets. For most people, two or three important behaviours are enough to focus on at one time. And make them specific. Instead of: “I'll walk more.” Try: “I'll walk for 20 minutes after lunch Monday, Wednesday and Friday.” Now you know exactly what success looks like.</p>
-<h2>2. TRACK: Make your health visible</h2>
-<p>Business owners track things that matter. Revenue. Cash flow. Pipeline. Conversions. Client retention. You don't look at revenue once in January and hope everything works out for the rest of the year. Your health doesn't need a complicated dashboard, but having a few simple measures can tell you whether the plan is actually happening. Depending on your goal, that might include: Training sessions completed Daily movement Sleep Body weight or body-composition trends Energy Selected nutrition behaviours You don't necessarily need to track all of them. Track what's useful for the outcome you're working towards. Research into behavioural weight-management programs has found a consistent association between self-monitoring behaviours and weight-loss outcomes, although the quality of the evidence in the review was limited and the authors called for stronger research. PubMed Central (PMC) The practical principle is straightforward: If you never look at what actually happened, it's difficult to know what needs adjusting.</p>
-<h2>3. REVIEW: Don't judge the week. Diagnose it.</h2>
-<p>This is where accountability becomes valuable. Once a week, ask: What did I plan? What did I actually do? What worked? What got in the way? What am I changing next week? It can take five minutes. Suppose your target was: 2 strength sessions and you completed: 1 strength session. Don't immediately conclude: “Bad week.” Find out why. If Thursday morning was repeatedly taken over by meetings, Thursday morning may simply be a poor training slot. Move it. That's not failure. That's data.</p>
-<h2>4. ADJUST: Have a backup before you need one</h2>
-<p>This is the part most health plans miss. They tell you what to do when everything goes according to plan. But what happens when it doesn't? If Tuesday's 6:30AM training session gets cancelled because of an urgent meeting, what's Plan B? Wednesday morning? A 30-minute session at lunch? A shorter workout at home? If Thursday becomes back-to-back meetings, what's lunch? The café downstairs? The meal you brought? Your default takeaway order? Decide the backup before the problem happens. Because accountability isn't just asking whether you followed Plan A. It's making sure you've got a Plan B.</p>
+<p>Keep it simple:</p>
+<h3>PLAN → TRACK → REVIEW → ADJUST</h3>
+<p>Four steps.</p>
+<p>Repeated every week.</p>
+<h3>1. PLAN: Focus on behaviours you can actually measure</h3>
+<p>“Get healthier” isn’t particularly useful.</p>
+<p>Neither is:</p>
+<p><strong>“Exercise more.”</strong></p>
+<p>Instead, choose behaviours you can actually complete.</p>
+<p>For example:</p>
+<ul><li>Strength train twice this week</li><li>Walk for 20 minutes after lunch three times</li><li>Prepare tomorrow’s lunch the night before</li><li>Be in bed by 10:30PM four nights this week</li></ul>
+<p>You don’t need ten targets.</p>
+<p>For most people, <strong>two or three important behaviours are enough to focus on at one time.</strong></p>
+<p>And make them specific.</p>
+<p>Instead of:</p>
+<p>“I’ll walk more.”</p>
+<p>Try:</p>
+<p><strong>“I’ll walk for 20 minutes after lunch Monday, Wednesday and Friday.”</strong></p>
+<p>Now you know exactly what success looks like.</p>
+<figure class="art-fig"><img src="assets/journal/accountability-missing-link-health-plan-1.jpg" alt="Planning specific health behaviours for the week" loading="lazy"></figure>
+<h3>2. TRACK: Make your health visible</h3>
+<p>Business owners track things that matter.</p>
+<p>Revenue.</p>
+<p>Cash flow.</p>
+<p>Pipeline.</p>
+<p>Conversions.</p>
+<p>Client retention.</p>
+<p>You don’t look at revenue once in January and hope everything works out for the rest of the year.</p>
+<p>Your health doesn’t need a complicated dashboard, but having a few simple measures can tell you whether the plan is actually happening.</p>
+<p>Depending on your goal, that might include:</p>
+<p><strong>Training sessions completed</strong></p>
+<p><strong>Daily movement</strong></p>
+<p><strong>Sleep</strong></p>
+<p><strong>Body weight or body-composition trends</strong></p>
+<p><strong>Energy</strong></p>
+<p><strong>Selected nutrition behaviours</strong></p>
+<p>You don’t necessarily need to track all of them.</p>
+<p>Track what’s useful for the outcome you’re working towards.</p>
+<p>Research into behavioural weight-management programs has found a consistent association between self-monitoring behaviours and weight-loss outcomes, although the quality of the evidence in the review was limited and the authors called for stronger research. <a class="art-src" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3268700/" target="_blank" rel="noopener">PubMed Central (PMC)</a></p>
+<p>The practical principle is straightforward:</p>
+<p><strong>If you never look at what actually happened, it’s difficult to know what needs adjusting.</strong></p>
+<figure class="art-fig"><img src="assets/journal/accountability-missing-link-health-plan-2.jpg" alt="Tracking weekly health habits like a business KPI" loading="lazy"></figure>
+<h3>3. REVIEW: Don’t judge the week. Diagnose it.</h3>
+<p>This is where accountability becomes valuable.</p>
+<p>Once a week, ask:</p>
+<p><strong>What did I plan?</strong></p>
+<p><strong>What did I actually do?</strong></p>
+<p><strong>What worked?</strong></p>
+<p><strong>What got in the way?</strong></p>
+<p><strong>What am I changing next week?</strong></p>
+<p>It can take five minutes.</p>
+<p>Suppose your target was:</p>
+<p><strong>2 strength sessions</strong></p>
+<p>and you completed:</p>
+<p><strong>1 strength session.</strong></p>
+<p>Don’t immediately conclude:</p>
+<p><strong>“Bad week.”</strong></p>
+<p>Find out why.</p>
+<p>If Thursday morning was repeatedly taken over by meetings, Thursday morning may simply be a poor training slot.</p>
+<p>Move it.</p>
+<p>That’s not failure.</p>
+<p><strong>That’s data.</strong></p>
+<h3>4. ADJUST: Have a backup before you need one</h3>
+<p>This is the part most health plans miss.</p>
+<p>They tell you what to do when everything goes according to plan.</p>
+<p>But what happens when it doesn’t?</p>
+<p>If Tuesday’s 6:30AM training session gets cancelled because of an urgent meeting, what’s Plan B?</p>
+<p>Wednesday morning?</p>
+<p>A 30-minute session at lunch?</p>
+<p>A shorter workout at home?</p>
+<p>If Thursday becomes back-to-back meetings, what’s lunch?</p>
+<p>The café downstairs?</p>
+<p>The meal you brought?</p>
+<p>Your default takeaway order?</p>
+<p><strong>Decide the backup before the problem happens.</strong></p>
+<p>Because accountability isn’t just asking whether you followed Plan A.</p>
+<p>It’s making sure you’ve got a Plan B.</p>
 <h2>Stop waiting for Monday</h2>
-<p>This might be the most important principle in the entire system. You miss Tuesday's workout. Wednesday gets busy. Thursday isn't convenient. Friday comes around and you think: “I'll start again Monday.” One missed workout has now become almost a week. Instead: Use the next reasonable opportunity. Missed Tuesday's workout? Train Wednesday. Had a bigger client dinner? Eat normally the following day. Had drinks at a networking event? Return to your usual routine afterwards. You don't need to punish yourself. You don't need to compensate. You don't need a ceremonial Monday restart. Just make the next useful decision. Consistency doesn't mean executing perfectly every day. It means one disruption doesn't become an abandoned month.</p>
+<p>This might be the most important principle in the entire system.</p>
+<p>You miss Tuesday’s workout.</p>
+<p>Wednesday gets busy.</p>
+<p>Thursday isn’t convenient.</p>
+<p>Friday comes around and you think:</p>
+<p><strong>“I’ll start again Monday.”</strong></p>
+<p>One missed workout has now become almost a week.</p>
+<p>Instead:</p>
+<p><strong>Use the next reasonable opportunity.</strong></p>
+<p>Missed Tuesday’s workout?</p>
+<p>Train Wednesday.</p>
+<p>Had a bigger client dinner?</p>
+<p>Eat normally the following day.</p>
+<p>Had drinks at a networking event?</p>
+<p>Return to your usual routine afterwards.</p>
+<p>You don’t need to punish yourself.</p>
+<p>You don’t need to compensate.</p>
+<p>You don’t need a ceremonial Monday restart.</p>
+<p><strong>Just make the next useful decision.</strong></p>
+<p>Consistency doesn’t mean executing perfectly every day.</p>
+<p>It means one disruption doesn’t become an abandoned month.</p>
 <h2>Your health plan needs a busy-week version</h2>
-<p>This is especially important if you run a business. There will be weeks when your normal routine simply isn't realistic. Big proposal. Staff problem. Travel. School commitments. Client event. Deadline. Trying to execute exactly the same health routine every week can turn one difficult week into the feeling that you've failed completely. Instead, create different operating modes.</p>
-<div class="art-table-w"><table class="art-table"><thead><tr><th></th><th>Normal Week</th><th>Busy Week</th><th>Very Busy Week</th></tr></thead>
-<tbody>
-<tr><td>Training</td><td>Full planned sessions</td><td>Fewer/shorter sessions</td><td>Protect one useful session if practical</td></tr>
-<tr><td>Movement</td><td>Planned walks/activity</td><td>Walk between meetings</td><td>Break up sitting when possible</td></tr>
-<tr><td>Food</td><td>Mostly planned meals</td><td>Simple default meals</td><td>Reliable takeaway/eating-out choices</td></tr>
-<tr><td>Sleep</td><td>Consistent routine</td><td>Protect bedtime where possible</td><td>Prioritise sleep opportunity</td></tr>
-</tbody></table></div>
-<p>This isn't about lowering your standards permanently. It's about preventing all-or-nothing thinking. Australia's current movement guidelines recommend that adults aged 18–64 undertake moderate-to-vigorous activity for at least 30 minutes on most days, muscle-strengthening activity on two or more days per week, limit and regularly break up sedentary time, and obtain 7–9 hours of good-quality sleep.</p>
-<p>Your long-term direction still matters. But your strategy for getting there can adapt when circumstances change.</p>
+<p>This is especially important if you run a business.</p>
+<p>There will be weeks when your normal routine simply isn’t realistic.</p>
+<p>Big proposal.</p>
+<p>Staff problem.</p>
+<p>Travel.</p>
+<p>School commitments.</p>
+<p>Client event.</p>
+<p>Deadline.</p>
+<p>Trying to execute exactly the same health routine every week can turn one difficult week into the feeling that you’ve failed completely.</p>
+<p>Instead, create different operating modes.</p>
+<div class="art-table-w"><table class="art-table"><thead><tr><th></th><th>Normal Week</th><th>Busy Week</th><th>Very Busy Week</th></tr></thead><tbody><tr><td>Training</td><td>Full planned sessions</td><td>Fewer/shorter sessions</td><td>Protect one useful session if practical</td></tr><tr><td>Movement</td><td>Planned walks/activity</td><td>Walk between meetings</td><td>Break up sitting when possible</td></tr><tr><td>Food</td><td>Mostly planned meals</td><td>Simple default meals</td><td>Reliable takeaway/eating-out choices</td></tr><tr><td>Sleep</td><td>Consistent routine</td><td>Protect bedtime where possible</td><td>Prioritise sleep opportunity</td></tr></tbody></table></div>
+<p>This isn’t about lowering your standards permanently.</p>
+<p>It’s about preventing <strong>all-or-nothing thinking</strong>.</p>
+<p>Australia’s current movement guidelines recommend that adults aged 18 to 64 undertake moderate-to-vigorous activity for at least 30 minutes on most days, muscle-strengthening activity on two or more days per week, limit and regularly break up sedentary time, and obtain 7 to 9 hours of good-quality sleep. <a class="art-src" href="https://www.health.gov.au/topics/physical-activity/24-hour-movement-guidelines-for-all-australians/recommendations-for-adults-18-to-64-years" target="_blank" rel="noopener">Department of Health</a></p>
+<p>Your long-term direction still matters.</p>
+<p>But your strategy for getting there can adapt when circumstances change.</p>
 <h2>Try this tomorrow: the 10-minute CEO health review</h2>
-<p>Open your calendar. Choose one area that's currently slipping. Training. Nutrition. Sleep. Movement. Then answer: 1. What's the outcome I'm working towards? Keep it clear. 2. What am I actually going to do this week? Choose one or two measurable behaviours. 3. When will they happen? Put them in your calendar. 4. What is most likely to get in the way? Look at your real schedule—not your ideal one. 5. What's my backup? Decide now. 6. Who or what will keep me accountable? A coach. A partner. A simple tracker. A scheduled weekly review. Then stop. You don't need another two-hour planning session. You need a clear commitment and a feedback loop.</p>
+<p>Open your calendar.</p>
+<p>Choose <strong>one area</strong> that’s currently slipping.</p>
+<p>Training.</p>
+<p>Nutrition.</p>
+<p>Sleep.</p>
+<p>Movement.</p>
+<p>Then answer:</p>
+<h4>1. What’s the outcome I’m working towards?</h4>
+<p>Keep it clear.</p>
+<h4>2. What am I actually going to do this week?</h4>
+<p>Choose one or two measurable behaviours.</p>
+<h4>3. When will they happen?</h4>
+<p>Put them in your calendar.</p>
+<h4>4. What is most likely to get in the way?</h4>
+<p>Look at your real schedule, not your ideal one.</p>
+<h4>5. What’s my backup?</h4>
+<p>Decide now.</p>
+<h4>6. Who or what will keep me accountable?</h4>
+<p>A coach.</p>
+<p>A partner.</p>
+<p>A simple tracker.</p>
+<p>A scheduled weekly review.</p>
+<p>Then stop.</p>
+<p>You don’t need another two-hour planning session.</p>
+<p>You need <strong>a clear commitment and a feedback loop.</strong></p>
 <h2>The UHP Takeaway</h2>
-<p>You probably don't need more health information. You need a system that helps turn what you already know into something you can execute consistently. At UHP, we think about accountability in four steps: PLAN → TRACK → REVIEW → ADJUST Set a realistic target. Track the few things that matter. Review what actually happened. Adjust when business or life gets in the way. That's very different from expecting yourself to stay motivated 365 days a year. Because the goal isn't a health routine that works during your easiest week. It's building one that survives your busiest one. That's how we approach health and performance at The Ultimate Health Project: simple systems, useful data and accountability built around the reality of running a business. Want to find out what's breaking down in your current health system?</p>
+<p>You probably don’t need more health information.</p>
+<p>You need a system that helps turn what you already know into something you can execute consistently.</p>
+<p>At UHP, we think about accountability in four steps:</p>
+<p><strong>PLAN → TRACK → REVIEW → ADJUST</strong></p>
+<p>Set a realistic target.</p>
+<p>Track the few things that matter.</p>
+<p>Review what actually happened.</p>
+<p>Adjust when business or life gets in the way.</p>
+<p>That’s very different from expecting yourself to stay motivated 365 days a year.</p>
+<p>Because the goal isn’t a health routine that works during your easiest week.</p>
+<p><strong>It’s building one that survives your busiest one.</strong></p>
+<p>That’s how we approach health and performance at <strong>The Ultimate Health Project</strong>: simple systems, useful data and accountability built around the reality of running a business.</p>
+<p><strong>Want to find out what’s breaking down in your current health system?</strong></p>
 <div class="art-cta"><a href="book.html" class="bp">Book a Free UHP Health &amp; Performance Call &rarr;</a></div>
-<h2>References</h2><ol class="art-refs"><li>[1] Burke LE, Wang J, Sevick MA. Self-monitoring in weight loss: a systematic review of the literature. Journal of the American Dietetic Association. 2011;111(1):92–102. The review found consistent associations between self-monitoring and weight-loss outcomes, while also noting important methodological limitations. PubMed Central (PMC)</li><li>[2] Australian Government Department of Health, Disability and Ageing. Recommendations for adults (18 to 64 years), Australian 24-hour movement guidelines.</li></ol>
+<h2>References</h2><ol class="art-refs"><li>Burke LE, Wang J, Sevick MA. Self-monitoring in weight loss: a systematic review of the literature. Journal of the American Dietetic Association. 2011;111(1):92–102. The review found consistent associations between self-monitoring and weight-loss outcomes, while also noting important methodological limitations. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3268700/" target="_blank" rel="noopener">PubMed Central (PMC)</a></li><li>Australian Government Department of Health, Disability and Ageing. Recommendations for adults (18 to 64 years), Australian 24-hour movement guidelines.</li></ol>
     </div>
   </div>
 </section>
@@ -230,7 +440,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   <div class="wrap">
     <div class="ft-g">
       <div class="ft-bc">
-        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:none"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
+        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:pointer"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
         <p style="font-size:14px;color:var(--dim);line-height:1.7;max-width:280px;margin-top:16px">More than coaching. Personalised meal plans, breakfast replacements, and AI accountability for busy business owners.</p>
         <p style="font-size:13px;color:var(--dim);margin-top:10px">Regents Park, NSW, Australia</p>
       </div>
@@ -247,9 +457,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   const hbg=document.getElementById('hbg'),mm=document.getElementById('mm'),mmx=document.getElementById('mmx');
   if(pt)setTimeout(()=>pt.classList.add('done'),60);
   window.addEventListener('scroll',()=>{const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);nav.classList.toggle('scrolled',window.scrollY>80);if(pb)pb.style.width=(p*100)+'%';},{passive:true});
-  const cur=document.getElementById('cur'),curf=document.getElementById('curf');
-  let mx=0,my=0,cx=0,cy=0;
-  if(cur){document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.cssText=`left:${mx}px;top:${my}px`});(function loop(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;curf.style.cssText=`left:${cx}px;top:${cy}px`;requestAnimationFrame(loop)})();}
   document.querySelectorAll('a,button,.hbg').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));});
   if(hbg)hbg.addEventListener('click',()=>{mm.classList.add('open');document.body.style.overflow='hidden';});
   if(mmx)mmx.addEventListener('click',()=>{mm.classList.remove('open');document.body.style.overflow='';});

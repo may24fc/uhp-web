@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0c0c0c">
-<title>Why Your Energy Crashes at 3PM — and What to Do Before Reaching for Another Coffee | The UHP Journal</title>
+<title>Why Your Energy Crashes at 3PM and What to Do Before Reaching for Another Coffee | The UHP Journal</title>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
@@ -15,10 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--black:#000;--bg:#0c0c0c;--surface:#141414;--card:#181818;--beige:#C4C0B7;--beige2:#ABA89F;--white:#F5F5F0;--text:#DEDAD4;--muted:#88847E;--dim:#4E4C48;--orange:#C9A84C;--orange2:#b8962e;--gold:#C9A84C;--border:rgba(196,192,183,.08);--border2:rgba(196,192,183,.15);--ease:cubic-bezier(.22,.61,.36,1);--ease-out:cubic-bezier(.16,1,.3,1);--font:'Barlow Condensed','Arial Narrow',sans-serif;--body:'Inter',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden;cursor:none}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:none;border:none;background:none;color:inherit}
-.cur{position:fixed;width:10px;height:10px;background:var(--white);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cur-f{position:fixed;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .4s var(--ease-out),height .4s var(--ease-out),border-color .4s}
-body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.028;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='1'/></svg>");mix-blend-mode:overlay}
 .sprog{position:fixed;top:0;left:0;right:0;height:2px;z-index:101;background:rgba(255,255,255,.06)}.sprog-bar{height:100%;background:var(--orange);width:0;transition:width .08s linear}
 .pt{position:fixed;inset:0;z-index:500;background:var(--black);transform:scaleY(1);transform-origin:top;transition:transform .65s cubic-bezier(.76,0,.24,1);pointer-events:none}.pt.done{transform:scaleY(0);transform-origin:bottom}
@@ -29,21 +26,21 @@ body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
 .wrap{max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.wrap{padding:0 24px}}
 .sec{padding:96px 0}@media(max-width:768px){.sec{padding:64px 0}}
 .lbl{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--beige)}.lbl::before{content:'';width:28px;height:1px;background:var(--beige);flex-shrink:0}
-.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:none}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
-.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:none}.bo:hover{background:var(--beige);color:var(--black)}
+.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
+.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bo:hover{background:var(--beige);color:var(--black)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;transition:background .4s var(--ease),border-color .4s}.nav.scrolled{background:rgba(12,12,12,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.nav-in{padding:0 24px}}
-.nav-logo{display:flex;align-items:center;gap:14px;cursor:none}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
-.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:none}.nl a:hover,.nl a.active{color:var(--white)}
-.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:none;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
+.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:pointer}.nl a:hover,.nl a.active{color:var(--white)}
+.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:pointer;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
 @media(max-width:900px){.nl{display:none}}@media(max-width:600px){.nc{display:none}}
 .hbg{display:none;flex-direction:column;gap:5px;padding:8px}.hbg span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px}@media(max-width:768px){.hbg{display:flex}}
 .mm{position:fixed;inset:0;z-index:98;background:rgba(8,8,8,.98);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;visibility:hidden;transition:all .4s var(--ease)}.mm.open{opacity:1;visibility:visible}
-.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:none}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:none;line-height:1}
+.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:pointer}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:pointer;line-height:1}
 footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0 40px}
 .ft-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:64px}
 .ft-col h6{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--beige);margin-bottom:20px;opacity:.8}
-.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:none}.ft-col a:hover{color:var(--white)}
+.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:pointer}.ft-col a:hover{color:var(--white)}
 .ft-bot{border-top:1px solid var(--border);padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.ft-bot p{font-size:12px;color:var(--muted);letter-spacing:.04em}
 @media(max-width:900px){.ft-g{grid-template-columns:1fr 1fr;gap:40px}.ft-bc{grid-column:1/-1}}@media(max-width:600px){.ft-g{grid-template-columns:1fr}.ft-bot{flex-direction:column;text-align:center}}
 
@@ -79,6 +76,29 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 .art-table th{background:var(--surface);color:var(--gold);font-family:var(--font);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:12px}
 .art-table td:first-child{color:var(--white);font-weight:700;white-space:nowrap}
 @media(max-width:600px){.art-table{font-size:13px;min-width:460px}.art-table th,.art-table td{padding:8px 10px}}
+.art-body h3{font-size:clamp(19px,2.2vw,22px);font-weight:800;text-transform:uppercase;color:var(--white);letter-spacing:.01em;line-height:1.25;margin:1.8em 0 .6em}
+.art-body h4{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);line-height:1.4;margin:1.6em 0 .5em}
+.art-body strong{color:var(--white);font-weight:700}
+.art-body a:not(.bp):not(.bo){color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.art-body a.art-src{display:inline-block;margin-left:4px;padding:1px 9px;font-size:11px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--muted);border:1px solid var(--border2);border-radius:999px;line-height:1.7;vertical-align:2px;transition:color .3s,border-color .3s}
+.art-body a.art-src:hover{color:var(--gold);border-color:var(--gold)}
+.art-fig{margin:2.2em 0}
+.art-fig img{width:100%;height:auto;border-radius:14px;display:block;background:var(--surface)}
+.art-fig figcaption{margin-top:10px;font-size:12px;color:var(--muted);text-align:center;letter-spacing:.03em}
+.art-fig figcaption a{color:var(--muted)!important}
+.art-schedule{margin:1.4em 0 1.8em;border-left:2px solid var(--gold);padding-left:22px}
+.art-sched-item{margin-bottom:1.1em}
+.art-sched-item:last-child{margin-bottom:0}
+.art-sched-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.art-sched-item p{margin:0;line-height:1.7}
+.art-steps{display:flex;flex-direction:column;gap:14px;margin:1.6em 0 2em}
+.art-step{padding:20px 24px;background:var(--surface);border:1px solid var(--border2);border-radius:14px}
+.art-step-time{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.art-step-title{font-family:var(--font);font-size:21px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--white);margin:4px 0 6px}
+.art-step p{margin:0;font-size:16px;line-height:1.7}
+.art-body ol.art-refs li{counter-increment:refs;position:relative;padding-left:28px}
+.art-body ol.art-refs li::before{content:counter(refs)'.';position:absolute;left:0;color:var(--gold);font-weight:700}
+@media(max-width:600px){.art-body{font-size:16.5px}.art-step{padding:16px 18px}.art-schedule{padding-left:16px}}
 
 /* RELATED */
 .rel-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-radius:16px;overflow:hidden;margin-top:24px}
@@ -99,8 +119,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 </style>
 </head>
 <body>
-<div class="cur" id="cur"></div>
-<div class="cur-f" id="curf"></div>
 <div class="grain"></div>
 <div class="sprog"><div class="sprog-bar" id="pb"></div></div>
 <div class="pt" id="pt"></div>
@@ -121,7 +139,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
     <div class="rv">
       <a href="blog.html" class="art-back">&larr; The UHP Journal</a>
       <div><span class="art-cat-pill">Energy</span></div>
-      <h1 class="art-title">Why Your Energy Crashes at 3PM — and What to Do Before Reaching for Another Coffee</h1>
+      <h1 class="art-title">Why Your Energy Crashes at 3PM and What to Do Before Reaching for Another Coffee</h1>
       <p class="art-dek">The afternoon slump is real. But before you reach for your third coffee, look at what happened in the six hours before it.</p>
       <div class="art-meta"><span>June 2026</span><div class="art-meta-dot"></div><span>5 min read</span><div class="art-meta-dot"></div><span>Energy</span></div>
     </div>
@@ -131,28 +149,110 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 <!-- BODY -->
 <section class="sec" style="background:var(--bg);padding-top:24px">
   <div class="art-wrap">
-    <div class="art-body rv">
-<p>It's 3PM. You've already had two coffees. There are still emails to answer, a meeting at 4PM and decisions that need your attention. Maybe you're supposed to train after work. But your brain has other plans. You're reading the same email for the third time. Concentration has disappeared. And suddenly the chocolate sitting in the office kitchen looks much more appealing than it did an hour ago. Sound familiar? Here's the first thing to know: some afternoon drop in alertness is normal. Research has found that a mid-afternoon dip in performance can occur even when someone hasn't eaten lunch.[1] So lunch isn't automatically the problem. But there's a big difference between feeling slightly less alert and hitting a wall every afternoon. Your sleep, eating pattern and how much you've moved during the day can all contribute to how you feel by 3PM. Before blaming your workload—or ordering another coffee—look at these four things.</p>
-<h2>1. Don't run on coffee until lunchtime</h2>
-<p>A busy morning can disappear quickly. One coffee becomes a meeting. The meeting runs over. You answer some emails, take a call, have another coffee and suddenly it's 12:30PM. Some people genuinely aren't hungry first thing in the morning, and there's no rule saying everyone needs to eat breakfast at 7AM. But if you're hungry and repeatedly replacing food with coffee because you're busy, that's worth fixing. You don't need a complicated “high-performance breakfast.” Try something practical:</p>
-<ul><li>Eggs on wholegrain toast</li><li>Greek yoghurt, fruit and oats</li><li>Porridge with milk and fruit</li><li>A smoothie with yoghurt, fruit and oats</li><li>Last night's leftovers</li></ul>
-<p>Australian dietary guidance focuses on your overall eating pattern and consuming a variety of nutritious foods—not finding one magical breakfast.[2]</p>
-<div class="art-callout">UHP rule: make the healthy option the easy option.</div>
-<p>If mornings are chaos, don't create a breakfast that takes 20 minutes to prepare. Find something you can realistically make or grab in five.</p>
-<h2>2. Stop treating lunch like an inconvenience</h2>
-<p>We've all seen it. A meeting runs through lunch. You grab something tiny because you're trying to lose body fat. Or you don't eat properly at all because you're “too busy.” Then 3PM arrives and you're hunting for something sweet. Rather than trying to make lunch as small as possible, make it a proper meal that fits your goals and your day. A simple framework is: Protein + vegetables or fruit + a carbohydrate source For example: Chicken + salad + rice Salmon + vegetables + potatoes Tuna + salad wrap + fruit And don't automatically blame carbohydrates for making you tired. The afternoon dip can happen even without eating lunch.[1] For most busy business owners, the bigger win is having a repeatable lunch strategy so you're not making food decisions while hungry between meetings. If you're eating out: you can use exactly the same framework. A chicken rice bowl, steak with vegetables and potatoes, sushi with a protein source, or a chicken salad wrap can all fit. You don't need the “perfect” lunch. You need one you can repeat when business gets busy.</p>
-<h2>3. Before opening another tab—or ordering another coffee—move</h2>
-<p>Think about your day so far. Drive to work. Sit at your desk. Meeting. Laptop. Another meeting. Lunch at your desk. Laptop again. By 3PM, you may have spent most of your working day sitting. Australian movement guidance recommends breaking up prolonged periods of sitting and incorporating movement throughout the day.[3] So when the afternoon slump arrives, use it as a trigger to get away from your screen. Walk outside. Take your next phone call while walking. Fill your water bottle. Walk around the block. You don't need to turn it into a workout. Try this at 3PM tomorrow: Close laptop → walk for 5–10 minutes → come back → reassess how you feel. It's ten minutes away from your desk that may also help you break up a long stretch of sitting.</p>
-<h2>4. Your 3PM problem may have started last night</h2>
-<p>This is probably the least exciting answer. It's also one of the most important. If you're answering emails at 11:30PM, scrolling LinkedIn in bed, going to sleep around midnight and getting up at 6AM, another productivity hack isn't going to replace adequate sleep. Most adults need around 7–9 hours of sleep a night.[4] That's particularly relevant for business owners because sleep is often the first thing sacrificed when the calendar gets busy. One more email. One more proposal. One more episode. One more scroll. Individually, they don't seem significant. Repeated every night, they add up. You don't need a perfect evening routine. But if you're consistently giving yourself six hours in bed and wondering why you're struggling to concentrate by mid-afternoon, start there before searching for another energy hack.</p>
+    <div class="art-body">
+<p>It’s 3PM.</p>
+<p>You’ve already had two coffees.</p>
+<p>There are still emails to answer, a meeting at 4PM and decisions that need your attention. Maybe you’re supposed to train after work.</p>
+<p>But your brain has other plans.</p>
+<p>You’re reading the same email for the third time. Concentration has disappeared. And suddenly the chocolate sitting in the office kitchen looks much more appealing than it did an hour ago.</p>
+<p>Sound familiar?</p>
+<p>Here’s the first thing to know: <strong>some afternoon drop in alertness is normal.</strong></p>
+<p>Research has found that a mid-afternoon dip in performance can occur even when someone hasn’t eaten lunch.[1] So lunch isn’t automatically the problem.</p>
+<p>But there’s a big difference between feeling slightly less alert and hitting a wall every afternoon.</p>
+<p>Your sleep, eating pattern and how much you’ve moved during the day can all contribute to how you feel by 3PM.</p>
+<p>Before blaming your workload, or ordering another coffee, look at these four things.</p>
+<h3>1. Don’t run on coffee until lunchtime</h3>
+<p>A busy morning can disappear quickly.</p>
+<p>One coffee becomes a meeting. The meeting runs over. You answer some emails, take a call, have another coffee and suddenly it’s 12:30PM.</p>
+<p>Some people genuinely aren’t hungry first thing in the morning, and there’s no rule saying everyone needs to eat breakfast at 7AM.</p>
+<p>But if you’re <strong>hungry</strong> and repeatedly replacing food with coffee because you’re busy, that’s worth fixing.</p>
+<p>You don’t need a complicated “high-performance breakfast.”</p>
+<p>Try something practical:</p>
+<ul><li>Eggs on wholegrain toast</li><li>Greek yoghurt, fruit and oats</li><li>Porridge with milk and fruit</li><li>A smoothie with yoghurt, fruit and oats</li><li>Last night’s leftovers</li></ul>
+<p>Australian dietary guidance focuses on your overall eating pattern and consuming a variety of nutritious foods, not finding one magical breakfast.[2]</p>
+<div class="art-callout"><strong>UHP rule: make the healthy option the easy option.</strong></div>
+<p>If mornings are chaos, don’t create a breakfast that takes 20 minutes to prepare. Find something you can realistically make or grab in five.</p>
+<figure class="art-fig"><img src="assets/journal/why-your-energy-crashes-at-3pm-1.jpg" alt="Simple breakfast of eggs, toast and fruit before a busy workday" loading="lazy"></figure>
+<h3>2. Stop treating lunch like an inconvenience</h3>
+<p>We’ve all seen it.</p>
+<p>A meeting runs through lunch.</p>
+<p>You grab something tiny because you’re trying to lose body fat.</p>
+<p>Or you don’t eat properly at all because you’re “too busy.”</p>
+<p>Then 3PM arrives and you’re hunting for something sweet.</p>
+<p>Rather than trying to make lunch as small as possible, make it a <strong>proper meal that fits your goals and your day.</strong></p>
+<p>A simple framework is:</p>
+<p><strong>Protein + vegetables or fruit + a carbohydrate source</strong></p>
+<p>For example:</p>
+<p><strong>Chicken + salad + rice</strong></p>
+<p><strong>Salmon + vegetables + potatoes</strong></p>
+<p><strong>Tuna + salad wrap + fruit</strong></p>
+<p>And don’t automatically blame carbohydrates for making you tired.</p>
+<p>The afternoon dip can happen even without eating lunch.[1]</p>
+<p>For most busy business owners, the bigger win is having a repeatable lunch strategy so you’re not making food decisions while hungry between meetings.</p>
+<p><strong>If you’re eating out:</strong> you can use exactly the same framework.</p>
+<p>A chicken rice bowl, steak with vegetables and potatoes, sushi with a protein source, or a chicken salad wrap can all fit.</p>
+<p>You don’t need the “perfect” lunch.</p>
+<p>You need one you can repeat when business gets busy.</p>
+<h3>3. Before opening another tab, or ordering another coffee, move</h3>
+<p>Think about your day so far.</p>
+<p>Drive to work.</p>
+<p>Sit at your desk.</p>
+<p>Meeting.</p>
+<p>Laptop.</p>
+<p>Another meeting.</p>
+<p>Lunch at your desk.</p>
+<p>Laptop again.</p>
+<p>By 3PM, you may have spent most of your working day sitting.</p>
+<p>Australian movement guidance recommends breaking up prolonged periods of sitting and incorporating movement throughout the day.[3]</p>
+<p>So when the afternoon slump arrives, use it as a trigger to get away from your screen.</p>
+<p>Walk outside.</p>
+<p>Take your next phone call while walking.</p>
+<p>Fill your water bottle.</p>
+<p>Walk around the block.</p>
+<p>You don’t need to turn it into a workout.</p>
+<p><strong>Try this at 3PM tomorrow:</strong></p>
+<p><strong>Close laptop → walk for 5 to 10 minutes → come back → reassess how you feel.</strong></p>
+<p>It’s ten minutes away from your desk that may also help you break up a long stretch of sitting.</p>
+<figure class="art-fig"><img src="assets/journal/why-your-energy-crashes-at-3pm-2.jpg" alt="Business owner taking a short walk outside to break up sitting" loading="lazy"></figure>
+<h3>4. Your 3PM problem may have started last night</h3>
+<p>This is probably the least exciting answer.</p>
+<p>It’s also one of the most important.</p>
+<p>If you’re answering emails at 11:30PM, scrolling LinkedIn in bed, going to sleep around midnight and getting up at 6AM, another productivity hack isn’t going to replace adequate sleep.</p>
+<p>Most adults need around <strong>7 to 9 hours of sleep a night</strong>.[4]</p>
+<p>That’s particularly relevant for business owners because sleep is often the first thing sacrificed when the calendar gets busy.</p>
+<p>One more email.</p>
+<p>One more proposal.</p>
+<p>One more episode.</p>
+<p>One more scroll.</p>
+<p>Individually, they don’t seem significant. Repeated every night, they add up.</p>
+<p>You don’t need a perfect evening routine.</p>
+<p>But if you’re consistently giving yourself six hours in bed and wondering why you’re struggling to concentrate by mid-afternoon, <strong>start there before searching for another energy hack.</strong></p>
+<figure class="art-fig"><img src="assets/journal/why-your-energy-crashes-at-3pm-3.jpg" alt="Phone and laptop put away at night to protect sleep" loading="lazy"></figure>
 <h2>Try this tomorrow</h2>
-<p>Don't overhaul your entire routine. Run this experiment for a day: Morning: If you're hungry, eat something substantial instead of relying solely on coffee. Lunch: Eat a proper meal rather than whatever happens to be closest between meetings. 3PM: Get away from your screen and walk for 5–10 minutes. Evening: Work backwards from tomorrow's wake-up time and give yourself an adequate opportunity for sleep. Then ask yourself: How was my energy between 2PM and 5PM? Do it for several days and look for a pattern. That's more useful than judging your energy from one particularly good or bad afternoon.</p>
-<h2>When it's more than an afternoon slump</h2>
-<p>Feeling a little less alert during the afternoon can be normal. Feeling exhausted every day is different. If you're experiencing persistent or unexplained fatigue—particularly if it's affecting your daily life or accompanied by other symptoms—speak with your GP rather than assuming it's simply work, food or a lack of coffee.</p>
+<p>Don’t overhaul your entire routine.</p>
+<p>Run this experiment for a day:</p>
+<div class="art-schedule"><div class="art-sched-item"><div class="art-sched-label">Morning</div><p>If you’re hungry, eat something substantial instead of relying solely on coffee.</p></div><div class="art-sched-item"><div class="art-sched-label">Lunch</div><p>Eat a proper meal rather than whatever happens to be closest between meetings.</p></div><div class="art-sched-item"><div class="art-sched-label">3PM</div><p>Get away from your screen and walk for 5 to 10 minutes.</p></div><div class="art-sched-item"><div class="art-sched-label">Evening</div><p>Work backwards from tomorrow’s wake-up time and give yourself an adequate opportunity for sleep.</p></div></div>
+<p>Then ask yourself:</p>
+<p><strong>How was my energy between 2PM and 5PM?</strong></p>
+<p>Do it for several days and look for a pattern.</p>
+<p>That’s more useful than judging your energy from one particularly good or bad afternoon.</p>
+<h3>When it’s more than an afternoon slump</h3>
+<p>Feeling a little less alert during the afternoon can be normal.</p>
+<p>Feeling exhausted every day is different.</p>
+<p>If you’re experiencing persistent or unexplained fatigue, particularly if it’s affecting your daily life or accompanied by other symptoms, speak with your GP rather than assuming it’s simply work, food or a lack of coffee.</p>
 <h2>The UHP Takeaway</h2>
-<p>Most business owners don't need another “energy hack.” They need a few basic systems that continue working when the calendar gets busy. Eat reasonably well. Move regularly. Protect your sleep. And make those behaviours easy enough that you can still do them during your busiest week—not just when everything goes according to plan. Because the goal isn't to build your life around your health program. Your health system needs to work around your life. That's how we approach health at The Ultimate Health Project: simple systems, measurable progress and accountability built around the reality of running a business. Want to find out what's holding back your energy, body and performance?</p>
+<p>Most business owners don’t need another “energy hack.”</p>
+<p>They need a few basic systems that continue working <strong>when the calendar gets busy</strong>.</p>
+<p>Eat reasonably well.</p>
+<p>Move regularly.</p>
+<p>Protect your sleep.</p>
+<p>And make those behaviours easy enough that you can still do them during your busiest week, not just when everything goes according to plan.</p>
+<p>Because the goal isn’t to build your life around your health program.</p>
+<p><strong>Your health system needs to work around your life.</strong></p>
+<p>That’s how we approach health at <strong>The Ultimate Health Project</strong>: simple systems, measurable progress and accountability built around the reality of running a business.</p>
+<p><strong>Want to find out what’s holding back your energy, body and performance?</strong></p>
 <div class="art-cta"><a href="book.html" class="bp">Book a Free UHP Health &amp; Performance Call &rarr;</a></div>
-<h2>References</h2><ol class="art-refs"><li>[1] Monk TH. The post-lunch dip in performance. Clinics in Sports Medicine. 2005;24(2):e15–e23. DOI: 10.1016/j.csm.2004.12.002. PubMed</li><li>[2] Australian Government, Eat for Health. Australian Dietary Guidelines 1–5. Eat For Health</li><li>[3] Australian Government Department of Health, Disability and Ageing. 24-hour movement guidelines for all Australians.</li><li>[4] Australian Government Department of Health, Disability and Ageing. Recommendations for adults aged 18–64 years. Government guidance states most adults need 7–9 hours of sleep to feel refreshed the next day.</li></ol>
+<h2>References</h2><ol class="art-refs"><li>Monk TH. The post-lunch dip in performance. Clinics in Sports Medicine. 2005;24(2):e15–e23. DOI: 10.1016/j.csm.2004.12.002. <a href="https://pubmed.ncbi.nlm.nih.gov/15892914/" target="_blank" rel="noopener">PubMed</a></li><li>Australian Government, Eat for Health. Australian Dietary Guidelines 1–5. <a href="https://www.eatforhealth.gov.au/guidelines/australian-dietary-guidelines-1-5" target="_blank" rel="noopener">Eat For Health</a></li><li>Australian Government Department of Health, Disability and Ageing. 24-hour movement guidelines for all Australians.</li><li>Australian Government Department of Health, Disability and Ageing. Recommendations for adults aged 18–64 years. Government guidance states most adults need 7–9 hours of sleep to feel refreshed the next day.</li></ol>
     </div>
   </div>
 </section>
@@ -215,7 +315,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   <div class="wrap">
     <div class="ft-g">
       <div class="ft-bc">
-        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:none"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
+        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:pointer"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
         <p style="font-size:14px;color:var(--dim);line-height:1.7;max-width:280px;margin-top:16px">More than coaching. Personalised meal plans, breakfast replacements, and AI accountability for busy business owners.</p>
         <p style="font-size:13px;color:var(--dim);margin-top:10px">Regents Park, NSW, Australia</p>
       </div>
@@ -232,9 +332,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   const hbg=document.getElementById('hbg'),mm=document.getElementById('mm'),mmx=document.getElementById('mmx');
   if(pt)setTimeout(()=>pt.classList.add('done'),60);
   window.addEventListener('scroll',()=>{const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);nav.classList.toggle('scrolled',window.scrollY>80);if(pb)pb.style.width=(p*100)+'%';},{passive:true});
-  const cur=document.getElementById('cur'),curf=document.getElementById('curf');
-  let mx=0,my=0,cx=0,cy=0;
-  if(cur){document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.cssText=`left:${mx}px;top:${my}px`});(function loop(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;curf.style.cssText=`left:${cx}px;top:${cy}px`;requestAnimationFrame(loop)})();}
   document.querySelectorAll('a,button,.hbg').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));});
   if(hbg)hbg.addEventListener('click',()=>{mm.classList.add('open');document.body.style.overflow='hidden';});
   if(mmx)mmx.addEventListener('click',()=>{mm.classList.remove('open');document.body.style.overflow='';});

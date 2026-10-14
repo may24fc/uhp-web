@@ -15,10 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--black:#000;--bg:#0c0c0c;--surface:#141414;--card:#181818;--beige:#C4C0B7;--beige2:#ABA89F;--white:#F5F5F0;--text:#DEDAD4;--muted:#88847E;--dim:#4E4C48;--orange:#C9A84C;--orange2:#b8962e;--gold:#C9A84C;--border:rgba(196,192,183,.08);--border2:rgba(196,192,183,.15);--ease:cubic-bezier(.22,.61,.36,1);--ease-out:cubic-bezier(.16,1,.3,1);--font:'Barlow Condensed','Arial Narrow',sans-serif;--body:'Inter',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden;cursor:none}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:none;border:none;background:none;color:inherit}
-.cur{position:fixed;width:10px;height:10px;background:var(--white);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cur-f{position:fixed;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .4s var(--ease-out),height .4s var(--ease-out),border-color .4s}
-body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.028;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='1'/></svg>");mix-blend-mode:overlay}
 .sprog{position:fixed;top:0;left:0;right:0;height:2px;z-index:101;background:rgba(255,255,255,.06)}.sprog-bar{height:100%;background:var(--orange);width:0;transition:width .08s linear}
 .pt{position:fixed;inset:0;z-index:500;background:var(--black);transform:scaleY(1);transform-origin:top;transition:transform .65s cubic-bezier(.76,0,.24,1);pointer-events:none}.pt.done{transform:scaleY(0);transform-origin:bottom}
@@ -29,21 +26,21 @@ body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
 .wrap{max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.wrap{padding:0 24px}}
 .sec{padding:96px 0}@media(max-width:768px){.sec{padding:64px 0}}
 .lbl{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--beige)}.lbl::before{content:'';width:28px;height:1px;background:var(--beige);flex-shrink:0}
-.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:none}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
-.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:none}.bo:hover{background:var(--beige);color:var(--black)}
+.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
+.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bo:hover{background:var(--beige);color:var(--black)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;transition:background .4s var(--ease),border-color .4s}.nav.scrolled{background:rgba(12,12,12,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.nav-in{padding:0 24px}}
-.nav-logo{display:flex;align-items:center;gap:14px;cursor:none}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
-.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:none}.nl a:hover,.nl a.active{color:var(--white)}
-.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:none;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
+.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:pointer}.nl a:hover,.nl a.active{color:var(--white)}
+.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:pointer;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
 @media(max-width:900px){.nl{display:none}}@media(max-width:600px){.nc{display:none}}
 .hbg{display:none;flex-direction:column;gap:5px;padding:8px}.hbg span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px}@media(max-width:768px){.hbg{display:flex}}
 .mm{position:fixed;inset:0;z-index:98;background:rgba(8,8,8,.98);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;visibility:hidden;transition:all .4s var(--ease)}.mm.open{opacity:1;visibility:visible}
-.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:none}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:none;line-height:1}
+.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:pointer}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:pointer;line-height:1}
 footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0 40px}
 .ft-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:64px}
 .ft-col h6{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--beige);margin-bottom:20px;opacity:.8}
-.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:none}.ft-col a:hover{color:var(--white)}
+.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:pointer}.ft-col a:hover{color:var(--white)}
 .ft-bot{border-top:1px solid var(--border);padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.ft-bot p{font-size:12px;color:var(--muted);letter-spacing:.04em}
 @media(max-width:900px){.ft-g{grid-template-columns:1fr 1fr;gap:40px}.ft-bc{grid-column:1/-1}}@media(max-width:600px){.ft-g{grid-template-columns:1fr}.ft-bot{flex-direction:column;text-align:center}}
 
@@ -79,6 +76,29 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 .art-table th{background:var(--surface);color:var(--gold);font-family:var(--font);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:12px}
 .art-table td:first-child{color:var(--white);font-weight:700;white-space:nowrap}
 @media(max-width:600px){.art-table{font-size:13px;min-width:460px}.art-table th,.art-table td{padding:8px 10px}}
+.art-body h3{font-size:clamp(19px,2.2vw,22px);font-weight:800;text-transform:uppercase;color:var(--white);letter-spacing:.01em;line-height:1.25;margin:1.8em 0 .6em}
+.art-body h4{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);line-height:1.4;margin:1.6em 0 .5em}
+.art-body strong{color:var(--white);font-weight:700}
+.art-body a:not(.bp):not(.bo){color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.art-body a.art-src{display:inline-block;margin-left:4px;padding:1px 9px;font-size:11px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--muted);border:1px solid var(--border2);border-radius:999px;line-height:1.7;vertical-align:2px;transition:color .3s,border-color .3s}
+.art-body a.art-src:hover{color:var(--gold);border-color:var(--gold)}
+.art-fig{margin:2.2em 0}
+.art-fig img{width:100%;height:auto;border-radius:14px;display:block;background:var(--surface)}
+.art-fig figcaption{margin-top:10px;font-size:12px;color:var(--muted);text-align:center;letter-spacing:.03em}
+.art-fig figcaption a{color:var(--muted)!important}
+.art-schedule{margin:1.4em 0 1.8em;border-left:2px solid var(--gold);padding-left:22px}
+.art-sched-item{margin-bottom:1.1em}
+.art-sched-item:last-child{margin-bottom:0}
+.art-sched-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.art-sched-item p{margin:0;line-height:1.7}
+.art-steps{display:flex;flex-direction:column;gap:14px;margin:1.6em 0 2em}
+.art-step{padding:20px 24px;background:var(--surface);border:1px solid var(--border2);border-radius:14px}
+.art-step-time{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.art-step-title{font-family:var(--font);font-size:21px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--white);margin:4px 0 6px}
+.art-step p{margin:0;font-size:16px;line-height:1.7}
+.art-body ol.art-refs li{counter-increment:refs;position:relative;padding-left:28px}
+.art-body ol.art-refs li::before{content:counter(refs)'.';position:absolute;left:0;color:var(--gold);font-weight:700}
+@media(max-width:600px){.art-body{font-size:16.5px}.art-step{padding:16px 18px}.art-schedule{padding-left:16px}}
 
 /* RELATED */
 .rel-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-radius:16px;overflow:hidden;margin-top:24px}
@@ -99,8 +119,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 </style>
 </head>
 <body>
-<div class="cur" id="cur"></div>
-<div class="cur-f" id="curf"></div>
 <div class="grain"></div>
 <div class="sprog"><div class="sprog-bar" id="pb"></div></div>
 <div class="pt" id="pt"></div>
@@ -122,7 +140,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
       <a href="blog.html" class="art-back">&larr; The UHP Journal</a>
       <div><span class="art-cat-pill">Nutrition</span></div>
       <h1 class="art-title">The 20-Minute Meal Prep System for Busy Business Owners</h1>
-      <p class="art-dek">You don't need to spend three hours meal prepping on Sunday. You need 20 minutes to make eating well the easier decision when your calendar gets messy.</p>
+      <p class="art-dek">You don’t need to spend three hours meal prepping on Sunday. You need 20 minutes to make eating well the easier decision when your calendar gets messy.</p>
       <div class="art-meta"><span>May 2026</span><div class="art-meta-dot"></div><span>7 min read</span><div class="art-meta-dot"></div><span>Nutrition</span></div>
     </div>
   </div>
@@ -131,35 +149,170 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 <!-- BODY -->
 <section class="sec" style="background:var(--bg);padding-top:24px">
   <div class="art-wrap">
-    <div class="art-body rv">
-<p>For most busy business owners, the problem isn't knowing that chicken and vegetables are probably a better everyday option than takeaway. The problem is Wednesday at 7PM. You've had back-to-back meetings. Something urgent came up at 4PM. You're leaving later than expected. You get home hungry and open the fridge. Nothing is ready. At that point, you're not thinking about your nutrition goals. You're thinking: “What's quickest?” And that's exactly why traditional meal prep doesn't work for everyone. You don't necessarily need seven identical containers lined up in your fridge every Sunday. You need a system that removes decisions when you're busiest, hungriest and least interested in making another decision. That's what this 20-minute system is designed to do.</p>
+    <div class="art-body">
+<p>For most busy business owners, the problem isn’t knowing that chicken and vegetables are probably a better everyday option than takeaway.</p>
+<p>The problem is <strong>Wednesday at 7PM</strong>.</p>
+<p>You’ve had back-to-back meetings.</p>
+<p>Something urgent came up at 4PM.</p>
+<p>You’re leaving later than expected.</p>
+<p>You get home hungry and open the fridge.</p>
+<p>Nothing is ready.</p>
+<p>At that point, you’re not thinking about your nutrition goals.</p>
+<p>You’re thinking:</p>
+<p><strong>“What’s quickest?”</strong></p>
+<p>And that’s exactly why traditional meal prep doesn’t work for everyone.</p>
+<p>You don’t necessarily need seven identical containers lined up in your fridge every Sunday.</p>
+<p>You need a system that removes decisions <strong>when you’re busiest, hungriest and least interested in making another decision.</strong></p>
+<p>That’s what this 20-minute system is designed to do.</p>
 <h2>The UHP 20-Minute Meal Prep System</h2>
-<p>Set a timer for 20 minutes. You're going to do four things: Calendar → Defaults → Prep → Backup Not prepare your entire week. Just make your busiest days easier.</p>
-<h2>Minutes 0–5: Start with your calendar, not your fridge</h2>
-<p>Before deciding what to cook, look at your actual week. Ask yourself: Which days are packed with meetings? Which nights am I likely to finish late? When am I eating away from home? Do I have client lunches or dinners? Which days could realistically fall apart? This matters because there's little point preparing five lunches if you're eating out three times. Instead, identify the two or three meals most likely to become a problem. Maybe Tuesday has six meetings. Wednesday you're working late. Thursday you've got a client dinner. Great. Now you know what you're preparing for. Australian dietary guidance supports planning meals and snacks ahead rather than leaving food decisions entirely to the moment. Eat For Health</p>
-<div class="art-callout">UHP rule: don't meal prep for your ideal week. Prep for your actual calendar.</div>
-<h2>Minutes 5–10: Choose two default meals</h2>
-<p>Next, remove some decisions. Choose: One default lunch. One default dinner. Something you genuinely like and can assemble quickly. A simple starting framework is: Protein source + vegetables + carbohydrate source For example: Chicken + salad + rice Tuna + vegetables + wholegrain toast Beef + vegetables + noodles Chickpeas + roasted vegetables + couscous It doesn't need to be exciting enough for a restaurant menu. It needs to be something you'll actually eat on a Wednesday night when you've finished work late. And “easy” doesn't automatically mean nutritionally poor. Frozen vegetables, canned legumes, canned fish and other convenient ingredients can all play a useful role in quick meals. Australia's Eat for Health resources specifically suggest options such as frozen vegetables, tuna, legumes and leftovers for quick meals. Eat For Health The goal isn't culinary perfection. It's removing: “What am I going to eat?” from an already overloaded day.</p>
-<h2>Minutes 10–15: Remove one bottleneck</h2>
-<p>This is where most people misunderstand meal prep. You don't have to cook everything. Ask: “What is the one thing that would make meals easier this week?” Maybe it's:</p>
-<ul><li>Putting chicken on to cook</li><li>Preparing a batch of rice</li><li>Washing and portioning vegetables</li><li>Making a salad base</li><li>Portioning fruit</li><li>Boiling some eggs</li><li>Moving tomorrow's frozen meal into the fridge</li><li>Dividing tonight's leftovers into tomorrow's lunch</li></ul>
-<p>You may not finish cooking everything within these five minutes—and that's fine. The 20 minutes is your setup time, not necessarily the total cooking time. If something can cook in the background while you continue with your evening, even better. Australian Government guidance recommends cooking extra portions and freezing leftovers for another day or taking them to work for lunch as a practical way to save time and reduce reliance on takeaway. Department of Health So if you're cooking dinner anyway, make tomorrow's lunch at the same time. Cook once. Solve two meals.</p>
-<h2>Minutes 15–20: Build your emergency plan</h2>
-<p>This might be the most important five minutes. Because your calendar will change. A meeting will run over. Someone will need something urgently. You'll get home later than expected. Your meal-prep system needs to survive that. Create three backups. At home Have a meal you can assemble in approximately five minutes. For example: Frozen vegetables + microwave rice + tuna Eggs + wholegrain toast + vegetables Frozen vegetables + canned beans + rice Government healthy-eating resources specifically identify frozen vegetables, canned tuna, legumes and leftovers as useful ingredients for quick meals. Eat For Health At the office Keep something available for the days when lunch disappears between meetings. That might be:</p>
+<p>Set a timer for 20 minutes.</p>
+<p>You’re going to do four things:</p>
+<p><strong>Calendar → Defaults → Prep → Backup</strong></p>
+<p>Not prepare your entire week.</p>
+<p>Just make your busiest days easier.</p>
+<h3>Minutes 0 to 5: Start with your calendar, not your fridge</h3>
+<p>Before deciding what to cook, look at your actual week.</p>
+<p>Ask yourself:</p>
+<p><strong>Which days are packed with meetings?</strong></p>
+<p><strong>Which nights am I likely to finish late?</strong></p>
+<p><strong>When am I eating away from home?</strong></p>
+<p><strong>Do I have client lunches or dinners?</strong></p>
+<p><strong>Which days could realistically fall apart?</strong></p>
+<p>This matters because there’s little point preparing five lunches if you’re eating out three times.</p>
+<p>Instead, identify the <strong>two or three meals most likely to become a problem.</strong></p>
+<p>Maybe Tuesday has six meetings.</p>
+<p>Wednesday you’re working late.</p>
+<p>Thursday you’ve got a client dinner.</p>
+<p>Great.</p>
+<p>Now you know what you’re preparing for.</p>
+<p>Australian dietary guidance supports planning meals and snacks ahead rather than leaving food decisions entirely to the moment. <a class="art-src" href="https://www.eatforhealth.gov.au/eating-well/tips-eating-well/meal-planning" target="_blank" rel="noopener">Eat For Health</a></p>
+<div class="art-callout"><strong>UHP rule: don’t meal prep for your ideal week. Prep for your actual calendar.</strong></div>
+<figure class="art-fig"><img src="assets/journal/20-minute-meal-prep-system-1.jpg" alt="Planning the week’s meals around a busy calendar" loading="lazy"></figure>
+<h3>Minutes 5 to 10: Choose two default meals</h3>
+<p>Next, remove some decisions.</p>
+<p>Choose:</p>
+<p><strong>One default lunch.</strong></p>
+<p><strong>One default dinner.</strong></p>
+<p>Something you genuinely like and can assemble quickly.</p>
+<p>A simple starting framework is:</p>
+<p><strong>Protein source + vegetables + carbohydrate source</strong></p>
+<p>For example:</p>
+<p><strong>Chicken + salad + rice</strong></p>
+<p><strong>Tuna + vegetables + wholegrain toast</strong></p>
+<p><strong>Beef + vegetables + noodles</strong></p>
+<p><strong>Chickpeas + roasted vegetables + couscous</strong></p>
+<p>It doesn’t need to be exciting enough for a restaurant menu.</p>
+<p>It needs to be something you’ll actually eat on a Wednesday night when you’ve finished work late.</p>
+<p>And “easy” doesn’t automatically mean nutritionally poor.</p>
+<p>Frozen vegetables, canned legumes, canned fish and other convenient ingredients can all play a useful role in quick meals. Australia’s Eat for Health resources specifically suggest options such as frozen vegetables, tuna, legumes and leftovers for quick meals. <a class="art-src" href="https://www.eatforhealth.gov.au/eating-well/tips-eating-well/quick-and-easy-meals" target="_blank" rel="noopener">Eat For Health</a></p>
+<p><strong>The goal isn’t culinary perfection.</strong></p>
+<p>It’s removing:</p>
+<p>“What am I going to eat?”</p>
+<p>from an already overloaded day.</p>
+<h3>Minutes 10 to 15: Remove one bottleneck</h3>
+<p>This is where most people misunderstand meal prep.</p>
+<p>You don’t have to cook everything.</p>
+<p>Ask:</p>
+<p><strong>“What is the one thing that would make meals easier this week?”</strong></p>
+<p>Maybe it’s:</p>
+<ul><li>Putting chicken on to cook</li><li>Preparing a batch of rice</li><li>Washing and portioning vegetables</li><li>Making a salad base</li><li>Portioning fruit</li><li>Boiling some eggs</li><li>Moving tomorrow’s frozen meal into the fridge</li><li>Dividing tonight’s leftovers into tomorrow’s lunch</li></ul>
+<p>You may not finish cooking everything within these five minutes, and that’s fine.</p>
+<p><strong>The 20 minutes is your setup time, not necessarily the total cooking time.</strong></p>
+<p>If something can cook in the background while you continue with your evening, even better.</p>
+<p>Australian Government guidance recommends cooking extra portions and freezing leftovers for another day or taking them to work for lunch as a practical way to save time and reduce reliance on takeaway. <a class="art-src" href="https://www.health.gov.au/topics/food-and-nutrition/about/healthy-eating-home-and-out" target="_blank" rel="noopener">Department of Health</a></p>
+<p>So if you’re cooking dinner anyway, make tomorrow’s lunch at the same time.</p>
+<p><strong>Cook once. Solve two meals.</strong></p>
+<h3>Minutes 15 to 20: Build your emergency plan</h3>
+<p>This might be the most important five minutes.</p>
+<p>Because your calendar <strong>will</strong> change.</p>
+<p>A meeting will run over.</p>
+<p>Someone will need something urgently.</p>
+<p>You’ll get home later than expected.</p>
+<p>Your meal-prep system needs to survive that.</p>
+<p>Create three backups.</p>
+<h4>At home</h4>
+<p>Have a meal you can assemble in approximately five minutes.</p>
+<p>For example:</p>
+<p><strong>Frozen vegetables + microwave rice + tuna</strong></p>
+<p><strong>Eggs + wholegrain toast + vegetables</strong></p>
+<p><strong>Frozen vegetables + canned beans + rice</strong></p>
+<p>Government healthy-eating resources specifically identify frozen vegetables, canned tuna, legumes and leftovers as useful ingredients for quick meals. <a class="art-src" href="https://www.eatforhealth.gov.au/eating-well/tips-eating-well/quick-and-easy-meals" target="_blank" rel="noopener">Eat For Health</a></p>
+<h4>At the office</h4>
+<p>Keep something available for the days when lunch disappears between meetings.</p>
+<p>That might be:</p>
 <ul><li>Fruit</li><li>Yoghurt if refrigeration is available</li><li>Unsalted nuts</li><li>Wholegrain crackers</li><li>Another practical snack that fits your needs</li></ul>
-<p>On a late night Know your default takeaway order before you need it. You might have two or three nearby places where you already know what you'll order. For example: Chicken + salad + rice Sushi + a protein-containing option Grilled meat + vegetables Wrap + salad Australian Government guidance recommends options such as wraps and other bread-based meals, including extra vegetables or salad, and choosing grilled rather than fried options when eating out. Eat For Health You don't have to eliminate takeaway. You need to eliminate the 8PM decision when you're starving and mentally finished for the day.</p>
+<h4>On a late night</h4>
+<p>Know your <strong>default takeaway order</strong> before you need it.</p>
+<p>You might have two or three nearby places where you already know what you’ll order.</p>
+<p>For example:</p>
+<p><strong>Chicken + salad + rice</strong></p>
+<p><strong>Sushi + a protein-containing option</strong></p>
+<p><strong>Grilled meat + vegetables</strong></p>
+<p><strong>Wrap + salad</strong></p>
+<p>Australian Government guidance recommends options such as wraps and other bread-based meals, including extra vegetables or salad, and choosing grilled rather than fried options when eating out. <a class="art-src" href="https://www.eatforhealth.gov.au/eating-well/tips-eating-well/eating-away-home" target="_blank" rel="noopener">Eat For Health</a></p>
+<p>You don’t have to eliminate takeaway.</p>
+<p><strong>You need to eliminate the 8PM decision when you’re starving and mentally finished for the day.</strong></p>
+<figure class="art-fig"><img src="assets/journal/20-minute-meal-prep-system-2.jpg" alt="Five-minute backup meal of rice, vegetables and tuna" loading="lazy"></figure>
 <h2>Your 20-minute checklist</h2>
-<p>Save this in your phone: 0–5 MINUTES — CALENDAR Find the 2–3 meals most likely to go wrong. 5–10 MINUTES — DEFAULTS Choose one lunch and one dinner you can repeat. 10–15 MINUTES — PREP Remove the biggest bottleneck. 15–20 MINUTES — BACKUP Make sure you've got an option at home, at work and for a late finish. Then: Stop. Don't turn meal prep into another project to manage. The point of the system is to save time and decisions during the week, not consume another chunk of your weekend.</p>
+<p>Save this in your phone:</p>
+<div class="art-steps"><div class="art-step"><div class="art-step-time">Minutes 0 to 5</div><div class="art-step-title">Calendar</div><p>Find the 2 to 3 meals most likely to go wrong.</p></div><div class="art-step"><div class="art-step-time">Minutes 5 to 10</div><div class="art-step-title">Defaults</div><p>Choose one lunch and one dinner you can repeat.</p></div><div class="art-step"><div class="art-step-time">Minutes 10 to 15</div><div class="art-step-title">Prep</div><p>Remove the biggest bottleneck.</p></div><div class="art-step"><div class="art-step-time">Minutes 15 to 20</div><div class="art-step-title">Backup</div><p>Make sure you’ve got an option at home, at work and for a late finish.</p></div></div>
+<p>Then:</p>
+<p><strong>Stop.</strong></p>
+<p>Don’t turn meal prep into another project to manage.</p>
+<p>The point of the system is to <strong>save time and decisions during the week</strong>, not consume another chunk of your weekend.</p>
 <h2>What this looks like in real life</h2>
-<p>Imagine you're looking at next week's calendar. Monday: relatively normal. Tuesday: six meetings. Wednesday: late finish. Thursday: client dinner. Friday: working from home. Traditional meal prep might tell you to prepare ten containers. You don't need ten containers. Your 20-minute planning session might reveal that Tuesday lunch and Wednesday dinner are the only meals you really need to solve. So you decide: Sunday: Make extra chicken with dinner and portion some for Tuesday. Tuesday: Your lunch is already decided. Grab it between meetings. Wednesday: You know you're finishing late, so there's a five-minute backup meal waiting at home. Thursday: Enjoy the client dinner. Friday: You're home and can make something fresh. You've just protected the most vulnerable parts of your week without spending half of Sunday meal prepping. That's the difference between following a meal plan and building a system around your life.</p>
+<p>Imagine you’re looking at next week’s calendar.</p>
+<div class="art-schedule"><div class="art-sched-item"><div class="art-sched-label">Monday</div><p>Relatively normal.</p></div><div class="art-sched-item"><div class="art-sched-label">Tuesday</div><p>Six meetings.</p></div><div class="art-sched-item"><div class="art-sched-label">Wednesday</div><p>Late finish.</p></div><div class="art-sched-item"><div class="art-sched-label">Thursday</div><p>Client dinner.</p></div><div class="art-sched-item"><div class="art-sched-label">Friday</div><p>Working from home.</p></div></div>
+<p>Traditional meal prep might tell you to prepare ten containers.</p>
+<p>You don’t need ten containers.</p>
+<p>Your 20-minute planning session might reveal that <strong>Tuesday lunch and Wednesday dinner are the only meals you really need to solve.</strong></p>
+<p>So you decide:</p>
+<div class="art-schedule"><div class="art-sched-item"><div class="art-sched-label">Sunday</div><p>Make extra chicken with dinner and portion some for Tuesday.</p></div><div class="art-sched-item"><div class="art-sched-label">Tuesday</div><p>Your lunch is already decided. Grab it between meetings.</p></div><div class="art-sched-item"><div class="art-sched-label">Wednesday</div><p>You know you’re finishing late, so there’s a five-minute backup meal waiting at home.</p></div><div class="art-sched-item"><div class="art-sched-label">Thursday</div><p>Enjoy the client dinner.</p></div><div class="art-sched-item"><div class="art-sched-label">Friday</div><p>You’re home and can make something fresh.</p></div></div>
+<p>You’ve just protected the most vulnerable parts of your week without spending half of Sunday meal prepping.</p>
+<p>That’s the difference between following a meal plan and <strong>building a system around your life.</strong></p>
 <h2>The real goal: reduce decision fatigue</h2>
-<p>Business owners make decisions all day. Staff. Clients. Cash flow. Sales. Problems. Opportunities. Then you get home and ask yourself: “What should I eat?” It's another decision. That's why this system isn't really about meal prep. It's about making important decisions before you're tired, hungry and short on time. Your Tuesday lunch has already been decided. Your late-night backup has already been decided. Your takeaway option has already been decided. That's the ROI on those 20 minutes. Not seven perfectly arranged containers. Fewer decisions when your energy and attention are needed somewhere else.</p>
+<p>Business owners make decisions all day.</p>
+<p>Staff.</p>
+<p>Clients.</p>
+<p>Cash flow.</p>
+<p>Sales.</p>
+<p>Problems.</p>
+<p>Opportunities.</p>
+<p>Then you get home and ask yourself:</p>
+<p><strong>“What should I eat?”</strong></p>
+<p>It’s another decision.</p>
+<p>That’s why this system isn’t really about meal prep.</p>
+<p><strong>It’s about making important decisions before you’re tired, hungry and short on time.</strong></p>
+<p>Your Tuesday lunch has already been decided.</p>
+<p>Your late-night backup has already been decided.</p>
+<p>Your takeaway option has already been decided.</p>
+<p>That’s the ROI on those 20 minutes.</p>
+<p>Not seven perfectly arranged containers.</p>
+<p><strong>Fewer decisions when your energy and attention are needed somewhere else.</strong></p>
 <h2>Try it this week</h2>
-<p>Set a 20-minute timer. Open your calendar. Identify your two most difficult meals. Choose your defaults. Remove one preparation bottleneck. Create your backup. Then get on with your weekend. Don't aim for a perfect week. Aim to make your busiest day easier.</p>
+<p>Set a 20-minute timer.</p>
+<p>Open your calendar.</p>
+<p>Identify your two most difficult meals.</p>
+<p>Choose your defaults.</p>
+<p>Remove one preparation bottleneck.</p>
+<p>Create your backup.</p>
+<p>Then get on with your weekend.</p>
+<p>Don’t aim for a perfect week.</p>
+<p><strong>Aim to make your busiest day easier.</strong></p>
 <h2>The UHP Takeaway</h2>
-<p>Your nutrition shouldn't depend on your business becoming less busy. Because chances are, it won't. The solution isn't spending hours every Sunday preparing every meal you'll eat. It's having a system that works when the calendar changes, the meeting runs over and you get home later than planned. At UHP, that's how we approach nutrition for business owners: Plan around the calendar. Reduce unnecessary decisions. Create reliable defaults. Always have a backup. Because a health system only works if you can actually keep using it when business gets busy. Want a health and performance plan built around your actual calendar?</p>
+<p>Your nutrition shouldn’t depend on your business becoming less busy.</p>
+<p>Because chances are, it won’t.</p>
+<p>The solution isn’t spending hours every Sunday preparing every meal you’ll eat.</p>
+<p>It’s having a system that works <strong>when the calendar changes, the meeting runs over and you get home later than planned.</strong></p>
+<p>At UHP, that’s how we approach nutrition for business owners:</p>
+<p><strong>Plan around the calendar.</strong></p>
+<p><strong>Reduce unnecessary decisions.</strong></p>
+<p><strong>Create reliable defaults.</strong></p>
+<p><strong>Always have a backup.</strong></p>
+<p>Because a health system only works if you can actually keep using it when business gets busy.</p>
+<p><strong>Want a health and performance plan built around your actual calendar?</strong></p>
 <div class="art-cta"><a href="book.html" class="bp">Book a Free UHP Health &amp; Performance Call &rarr;</a></div>
-<h2>References</h2><ol class="art-refs"><li>[1] Eat for Health — Meal planning. This supports planning meals and snacks ahead. Eat For Health</li><li>[2] Eat for Health — Quick and easy meals. Particularly useful for the claims around leftovers, frozen vegetables and reducing reliance on convenience/takeaway meals. Eat For Health</li><li>[3] Australian Government Department of Health, Disability and Ageing — Healthy eating at home and out. Supports cooking extra portions, freezing leftovers, taking leftovers to work and healthier takeaway choices.</li></ol>
+<h2>References</h2><ol class="art-refs"><li>Eat for Health: Meal planning. This supports planning meals and snacks ahead. <a href="https://www.eatforhealth.gov.au/eating-well/tips-eating-well/meal-planning" target="_blank" rel="noopener">Eat For Health</a></li><li>Eat for Health: Quick and easy meals. Particularly useful for the claims around leftovers, frozen vegetables and reducing reliance on convenience/takeaway meals. <a href="https://www.eatforhealth.gov.au/eating-well/tips-eating-well/quick-and-easy-meals" target="_blank" rel="noopener">Eat For Health</a></li><li>Australian Government Department of Health, Disability and Ageing: Healthy eating at home and out. Supports cooking extra portions, freezing leftovers, taking leftovers to work and healthier takeaway choices.</li></ol>
     </div>
   </div>
 </section>
@@ -222,7 +375,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   <div class="wrap">
     <div class="ft-g">
       <div class="ft-bc">
-        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:none"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
+        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:pointer"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
         <p style="font-size:14px;color:var(--dim);line-height:1.7;max-width:280px;margin-top:16px">More than coaching. Personalised meal plans, breakfast replacements, and AI accountability for busy business owners.</p>
         <p style="font-size:13px;color:var(--dim);margin-top:10px">Regents Park, NSW, Australia</p>
       </div>
@@ -239,9 +392,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   const hbg=document.getElementById('hbg'),mm=document.getElementById('mm'),mmx=document.getElementById('mmx');
   if(pt)setTimeout(()=>pt.classList.add('done'),60);
   window.addEventListener('scroll',()=>{const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);nav.classList.toggle('scrolled',window.scrollY>80);if(pb)pb.style.width=(p*100)+'%';},{passive:true});
-  const cur=document.getElementById('cur'),curf=document.getElementById('curf');
-  let mx=0,my=0,cx=0,cy=0;
-  if(cur){document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.cssText=`left:${mx}px;top:${my}px`});(function loop(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;curf.style.cssText=`left:${cx}px;top:${cy}px`;requestAnimationFrame(loop)})();}
   document.querySelectorAll('a,button,.hbg').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));});
   if(hbg)hbg.addEventListener('click',()=>{mm.classList.add('open');document.body.style.overflow='hidden';});
   if(mmx)mmx.addEventListener('click',()=>{mm.classList.remove('open');document.body.style.overflow='';});

@@ -15,10 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--black:#000;--bg:#0c0c0c;--surface:#141414;--card:#181818;--beige:#C4C0B7;--beige2:#ABA89F;--white:#F5F5F0;--text:#DEDAD4;--muted:#88847E;--dim:#4E4C48;--orange:#C9A84C;--orange2:#b8962e;--gold:#C9A84C;--border:rgba(196,192,183,.08);--border2:rgba(196,192,183,.15);--ease:cubic-bezier(.22,.61,.36,1);--ease-out:cubic-bezier(.16,1,.3,1);--font:'Barlow Condensed','Arial Narrow',sans-serif;--body:'Inter',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden;cursor:none}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:none;border:none;background:none;color:inherit}
-.cur{position:fixed;width:10px;height:10px;background:var(--white);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);mix-blend-mode:difference}
-.cur-f{position:fixed;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .4s var(--ease-out),height .4s var(--ease-out),border-color .4s}
-body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}body{background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:var(--font)}::selection{background:rgba(201,168,76,.28);color:#fff}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.028;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='1'/></svg>");mix-blend-mode:overlay}
 .sprog{position:fixed;top:0;left:0;right:0;height:2px;z-index:101;background:rgba(255,255,255,.06)}.sprog-bar{height:100%;background:var(--orange);width:0;transition:width .08s linear}
 .pt{position:fixed;inset:0;z-index:500;background:var(--black);transform:scaleY(1);transform-origin:top;transition:transform .65s cubic-bezier(.76,0,.24,1);pointer-events:none}.pt.done{transform:scaleY(0);transform-origin:bottom}
@@ -29,21 +26,21 @@ body.hovering .cur-f{width:56px;height:56px;border-color:rgba(201,168,76,.5)}
 .wrap{max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.wrap{padding:0 24px}}
 .sec{padding:96px 0}@media(max-width:768px){.sec{padding:64px 0}}
 .lbl{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--beige)}.lbl::before{content:'';width:28px;height:1px;background:var(--beige);flex-shrink:0}
-.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:none}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
-.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:none}.bo:hover{background:var(--beige);color:var(--black)}
+.bp{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid #C9A84C;border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bp:hover{background:#b8962e;border-color:#b8962e;transform:translateY(-2px)}
+.bo{display:inline-flex;align-items:center;gap:8px;padding:15px 32px;background:transparent;color:var(--beige);font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--beige);border-radius:999px;transition:all .35s var(--ease);cursor:pointer}.bo:hover{background:var(--beige);color:var(--black)}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;transition:background .4s var(--ease),border-color .4s}.nav.scrolled{background:rgba(12,12,12,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;max-width:1400px;margin:0 auto;padding:0 52px}@media(max-width:768px){.nav-in{padding:0 24px}}
-.nav-logo{display:flex;align-items:center;gap:14px;cursor:none}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
-.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:none}.nl a:hover,.nl a.active{color:var(--white)}
-.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:none;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
+.nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer}.logo-mark{width:28px;height:34px;color:var(--white);transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-mark{transform:scale(1.06)}.logo-img{height:36px;width:auto;object-fit:contain;display:block;transition:transform .35s var(--ease-out)}.nav-logo:hover .logo-img{transform:scale(1.05)}.logo-wm{line-height:1.1}.logo-wm-main{display:block;font-family:var(--font);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--white)}.logo-wm-sub{display:block;font-family:var(--font);font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,192,183,.5);margin-top:2px}
+.nl{display:flex;align-items:center;gap:2px}.nl a{padding:8px 16px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.48);transition:color .25s;cursor:pointer}.nl a:hover,.nl a.active{color:var(--white)}
+.nc{padding:10px 24px;background:#C9A84C;color:#000;font-family:var(--font);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;transition:all .3s;cursor:pointer;white-space:nowrap}.nc:hover{background:#b8962e;transform:translateY(-1px)}
 @media(max-width:900px){.nl{display:none}}@media(max-width:600px){.nc{display:none}}
 .hbg{display:none;flex-direction:column;gap:5px;padding:8px}.hbg span{display:block;width:22px;height:1.5px;background:var(--white);border-radius:2px}@media(max-width:768px){.hbg{display:flex}}
 .mm{position:fixed;inset:0;z-index:98;background:rgba(8,8,8,.98);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;visibility:hidden;transition:all .4s var(--ease)}.mm.open{opacity:1;visibility:visible}
-.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:none}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:none;line-height:1}
+.mm a{font-family:var(--font);font-size:clamp(30px,9vw,52px);font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.32);transition:color .3s,letter-spacing .3s;line-height:1.2;cursor:pointer}.mm a:hover{color:var(--white)}.mm a.bp{color:#000;font-size:16px}.mm a.bp:hover{color:#000}.mm-x{position:absolute;top:24px;right:28px;font-size:30px;color:rgba(255,255,255,.3);cursor:pointer;line-height:1}
 footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0 40px}
 .ft-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:64px}
 .ft-col h6{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--beige);margin-bottom:20px;opacity:.8}
-.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:none}.ft-col a:hover{color:var(--white)}
+.ft-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:12px;transition:color .25s;cursor:pointer}.ft-col a:hover{color:var(--white)}
 .ft-bot{border-top:1px solid var(--border);padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.ft-bot p{font-size:12px;color:var(--muted);letter-spacing:.04em}
 @media(max-width:900px){.ft-g{grid-template-columns:1fr 1fr;gap:40px}.ft-bc{grid-column:1/-1}}@media(max-width:600px){.ft-g{grid-template-columns:1fr}.ft-bot{flex-direction:column;text-align:center}}
 
@@ -79,6 +76,29 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 .art-table th{background:var(--surface);color:var(--gold);font-family:var(--font);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:12px}
 .art-table td:first-child{color:var(--white);font-weight:700;white-space:nowrap}
 @media(max-width:600px){.art-table{font-size:13px;min-width:460px}.art-table th,.art-table td{padding:8px 10px}}
+.art-body h3{font-size:clamp(19px,2.2vw,22px);font-weight:800;text-transform:uppercase;color:var(--white);letter-spacing:.01em;line-height:1.25;margin:1.8em 0 .6em}
+.art-body h4{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);line-height:1.4;margin:1.6em 0 .5em}
+.art-body strong{color:var(--white);font-weight:700}
+.art-body a:not(.bp):not(.bo){color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.art-body a.art-src{display:inline-block;margin-left:4px;padding:1px 9px;font-size:11px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--muted);border:1px solid var(--border2);border-radius:999px;line-height:1.7;vertical-align:2px;transition:color .3s,border-color .3s}
+.art-body a.art-src:hover{color:var(--gold);border-color:var(--gold)}
+.art-fig{margin:2.2em 0}
+.art-fig img{width:100%;height:auto;border-radius:14px;display:block;background:var(--surface)}
+.art-fig figcaption{margin-top:10px;font-size:12px;color:var(--muted);text-align:center;letter-spacing:.03em}
+.art-fig figcaption a{color:var(--muted)!important}
+.art-schedule{margin:1.4em 0 1.8em;border-left:2px solid var(--gold);padding-left:22px}
+.art-sched-item{margin-bottom:1.1em}
+.art-sched-item:last-child{margin-bottom:0}
+.art-sched-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.art-sched-item p{margin:0;line-height:1.7}
+.art-steps{display:flex;flex-direction:column;gap:14px;margin:1.6em 0 2em}
+.art-step{padding:20px 24px;background:var(--surface);border:1px solid var(--border2);border-radius:14px}
+.art-step-time{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.art-step-title{font-family:var(--font);font-size:21px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:var(--white);margin:4px 0 6px}
+.art-step p{margin:0;font-size:16px;line-height:1.7}
+.art-body ol.art-refs li{counter-increment:refs;position:relative;padding-left:28px}
+.art-body ol.art-refs li::before{content:counter(refs)'.';position:absolute;left:0;color:var(--gold);font-weight:700}
+@media(max-width:600px){.art-body{font-size:16.5px}.art-step{padding:16px 18px}.art-schedule{padding-left:16px}}
 
 /* RELATED */
 .rel-g{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-radius:16px;overflow:hidden;margin-top:24px}
@@ -99,8 +119,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 </style>
 </head>
 <body>
-<div class="cur" id="cur"></div>
-<div class="cur-f" id="curf"></div>
 <div class="grain"></div>
 <div class="sprog"><div class="sprog-bar" id="pb"></div></div>
 <div class="pt" id="pt"></div>
@@ -122,7 +140,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
       <a href="blog.html" class="art-back">&larr; The UHP Journal</a>
       <div><span class="art-cat-pill">Training</span></div>
       <h1 class="art-title">How to Eat Around Your Training Without Overcomplicating Your Day</h1>
-      <p class="art-dek">You don't need six meals, perfect timing or a cupboard full of sports nutrition products. For most busy business owners, getting more from your training starts with a few simple decisions around when and what you eat.</p>
+      <p class="art-dek">You don’t need six meals, perfect timing or a cupboard full of sports nutrition products. For most busy business owners, getting more from your training starts with a few simple decisions around when and what you eat.</p>
       <div class="art-meta"><span>April 2026</span><div class="art-meta-dot"></div><span>8 min read</span><div class="art-meta-dot"></div><span>Training</span></div>
     </div>
   </div>
@@ -131,40 +149,215 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
 <!-- BODY -->
 <section class="sec" style="background:var(--bg);padding-top:24px">
   <div class="art-wrap">
-    <div class="art-body rv">
-<p>You've blocked out a 6PM training session. Great. Then the day starts. Breakfast is rushed. A meeting runs through lunch. At 4:30PM you realise you haven't eaten properly for hours. Now you're wondering: Should I eat before training? Will eating now make me feel too full? Do I need a protein shake afterwards? Should I avoid carbohydrates because I'm trying to lose body fat? Suddenly a 45-minute gym session has created an entire nutrition strategy you need to manage. It doesn't need to be that complicated. For most business owners doing regular gym or strength sessions, the first priority isn't perfect nutrient timing. It's getting the fundamentals right consistently. Then you can make a few practical adjustments around your training.</p>
-<h2>Start with the whole day—not the workout</h2>
-<p>Before worrying about what to eat immediately before or after training, zoom out. Ask: Am I eating reasonably well across the day? Am I regularly including protein-rich foods? Am I eating fruit and vegetables? Am I including nutritious carbohydrate sources? Am I drinking enough water? Australian dietary guidance recommends eating a variety of nutritious foods across the five food groups and drinking water. Eat For Health That's your foundation. Because a perfectly timed banana at 5:30PM isn't going to fix an entire day of poor nutrition. If you train after work, breakfast and lunch still matter. If you train first thing in the morning, what you ate the previous evening may influence how you feel as well. Think about the day first. Then optimise around the workout.</p>
+    <div class="art-body">
+<p>You’ve blocked out a 6PM training session.</p>
+<p>Great.</p>
+<p>Then the day starts.</p>
+<p>Breakfast is rushed.</p>
+<p>A meeting runs through lunch.</p>
+<p>At 4:30PM you realise you haven’t eaten properly for hours.</p>
+<p>Now you’re wondering:</p>
+<p><strong>Should I eat before training?</strong></p>
+<p><strong>Will eating now make me feel too full?</strong></p>
+<p><strong>Do I need a protein shake afterwards?</strong></p>
+<p><strong>Should I avoid carbohydrates because I’m trying to lose body fat?</strong></p>
+<p>Suddenly a 45-minute gym session has created an entire nutrition strategy you need to manage.</p>
+<p>It doesn’t need to be that complicated.</p>
+<p>For most business owners doing regular gym or strength sessions, the first priority isn’t perfect nutrient timing.</p>
+<p><strong>It’s getting the fundamentals right consistently.</strong></p>
+<p>Then you can make a few practical adjustments around your training.</p>
+<h2>Start with the whole day, not the workout</h2>
+<p>Before worrying about what to eat immediately before or after training, zoom out.</p>
+<p>Ask:</p>
+<p><strong>Am I eating reasonably well across the day?</strong></p>
+<p><strong>Am I regularly including protein-rich foods?</strong></p>
+<p><strong>Am I eating fruit and vegetables?</strong></p>
+<p><strong>Am I including nutritious carbohydrate sources?</strong></p>
+<p><strong>Am I drinking enough water?</strong></p>
+<p>Australian dietary guidance recommends eating a variety of nutritious foods across the five food groups and drinking water. <a class="art-src" href="https://www.eatforhealth.gov.au/food-essentials/five-food-groups" target="_blank" rel="noopener">Eat For Health</a></p>
+<p>That’s your foundation.</p>
+<p>Because a perfectly timed banana at 5:30PM isn’t going to fix an entire day of poor nutrition.</p>
+<p>If you train after work, breakfast and lunch still matter.</p>
+<p>If you train first thing in the morning, what you ate the previous evening may influence how you feel as well.</p>
+<p><strong>Think about the day first. Then optimise around the workout.</strong></p>
 <h2>Before training: ask one question</h2>
-<p>Instead of: “What's the perfect pre-workout meal?” Ask: “When did I last eat, and how do I normally feel when I train?” That's much more useful. If you've recently eaten a normal meal and feel good, you may not need anything else. If several hours have passed and you're getting hungry, eating something before training may make sense. A normal meal beforehand might include: Chicken + rice + vegetables Eggs + wholegrain toast + fruit Greek yoghurt + oats + berries Tuna + salad wrap + fruit If you're closer to your session and don't want a full meal, something smaller may be more comfortable:</p>
+<p>Instead of:</p>
+<p>“What’s the perfect pre-workout meal?”</p>
+<p>Ask:</p>
+<p><strong>“When did I last eat, and how do I normally feel when I train?”</strong></p>
+<p>That’s much more useful.</p>
+<p>If you’ve recently eaten a normal meal and feel good, you may not need anything else.</p>
+<p>If several hours have passed and you’re getting hungry, eating something before training may make sense.</p>
+<p>A normal meal beforehand might include:</p>
+<p><strong>Chicken + rice + vegetables</strong></p>
+<p><strong>Eggs + wholegrain toast + fruit</strong></p>
+<p><strong>Greek yoghurt + oats + berries</strong></p>
+<p><strong>Tuna + salad wrap + fruit</strong></p>
+<p>If you’re closer to your session and don’t want a full meal, something smaller may be more comfortable:</p>
 <ul><li>Banana</li><li>Yoghurt and fruit</li><li>Toast</li><li>Glass of milk and fruit</li><li>Small smoothie</li></ul>
-<p>The exact choice depends on your appetite, the type of training you're doing and what feels comfortable for you. You want to arrive ready to train—not starving and not uncomfortably full.</p>
+<p>The exact choice depends on your appetite, the type of training you’re doing and what feels comfortable for you.</p>
+<p><strong>You want to arrive ready to train, not starving and not uncomfortably full.</strong></p>
 <h2>What if you train first thing in the morning?</h2>
-<p>This is common for business owners. You might have: 5:30AM — wake up 6:00AM — gym 7:15AM — home 7:45AM — school drop-off 8:30AM — first meeting Trying to add a full sit-down breakfast before training may make the entire routine harder. If you feel comfortable training without eating beforehand, you don't necessarily need to force down a large breakfast. Have some water, train, then eat afterwards. But if you consistently feel hungry, flat or uncomfortable training without food, try something small beforehand. For example: Banana Piece of toast Yoghurt Small smoothie Then have your normal breakfast afterwards. There's no prize for training hungry. And there's no rule saying you must eat before every workout. Build the routine around what helps you train well and what you can actually maintain.</p>
-<h2>After training: don't panic about the clock</h2>
-<p>This is where fitness nutrition often becomes unnecessarily complicated. You've probably heard some version of: “You need protein immediately after training or you've missed your window.” For most recreational lifters, that's not a useful way to think about it. Protein matters. But so does what you're eating across the entire day. Research supports adequate protein intake alongside resistance training for gains in muscle mass and strength. A large meta-analysis of 49 studies involving 1,863 participants found that protein supplementation produced modest additional improvements in strength and fat-free mass during prolonged resistance training. British Journal of Sports Medicine So after training, ask: “When is my next proper meal?” Training at lunchtime and eating lunch afterwards? Great. Training at 5:30PM and having dinner at 7PM? Also straightforward. If your next proper meal is several hours away, have something convenient to bridge the gap. For example:</p>
+<p>This is common for business owners.</p>
+<p>You might have:</p>
+<p><strong>5:30AM: wake up</strong></p>
+<p><strong>6:00AM: gym</strong></p>
+<p><strong>7:15AM: home</strong></p>
+<p><strong>7:45AM: school drop-off</strong></p>
+<p><strong>8:30AM: first meeting</strong></p>
+<p>Trying to add a full sit-down breakfast before training may make the entire routine harder.</p>
+<p>If you feel comfortable training without eating beforehand, you don’t necessarily need to force down a large breakfast.</p>
+<p>Have some water, train, then eat afterwards.</p>
+<p>But if you consistently feel hungry, flat or uncomfortable training without food, try something small beforehand.</p>
+<p>For example:</p>
+<p><strong>Banana</strong></p>
+<p><strong>Piece of toast</strong></p>
+<p><strong>Yoghurt</strong></p>
+<p><strong>Small smoothie</strong></p>
+<p>Then have your normal breakfast afterwards.</p>
+<p>There’s no prize for training hungry.</p>
+<p>And there’s no rule saying you must eat before every workout.</p>
+<p><strong>Build the routine around what helps you train well and what you can actually maintain.</strong></p>
+<figure class="art-fig"><img src="assets/journal/how-to-eat-around-your-training-1.jpg" alt="Banana and yoghurt bowl as a small pre-training snack" loading="lazy"></figure>
+<h2>After training: don’t panic about the clock</h2>
+<p>This is where fitness nutrition often becomes unnecessarily complicated.</p>
+<p>You’ve probably heard some version of:</p>
+<p><strong>“You need protein immediately after training or you’ve missed your window.”</strong></p>
+<p>For most recreational lifters, that’s not a useful way to think about it.</p>
+<p>Protein matters.</p>
+<p>But so does what you’re eating across the entire day.</p>
+<p>Research supports adequate protein intake alongside resistance training for gains in muscle mass and strength. A large meta-analysis of 49 studies involving 1,863 participants found that protein supplementation produced modest additional improvements in strength and fat-free mass during prolonged resistance training. <a class="art-src" href="https://bjsm.bmj.com/content/52/6/376" target="_blank" rel="noopener">British Journal of Sports Medicine</a></p>
+<p>So after training, ask:</p>
+<p><strong>“When is my next proper meal?”</strong></p>
+<p>Training at lunchtime and eating lunch afterwards?</p>
+<p>Great.</p>
+<p>Training at 5:30PM and having dinner at 7PM?</p>
+<p>Also straightforward.</p>
+<p>If your next proper meal is several hours away, have something convenient to bridge the gap.</p>
+<p>For example:</p>
 <ul><li>Greek yoghurt + fruit</li><li>Cottage cheese + fruit</li><li>Eggs on toast</li><li>Tuna + crackers</li><li>Milk-based smoothie</li><li>Protein shake when convenience requires it</li></ul>
-<p>The goal isn't winning the race to consume protein fastest. It's consistently getting adequate nutrition across your day.</p>
+<p><strong>The goal isn’t winning the race to consume protein fastest.</strong></p>
+<p>It’s consistently getting adequate nutrition across your day.</p>
 <h2>If building or maintaining muscle matters, make protein easy</h2>
-<p>If you're resistance training and want to build or maintain muscle, protein deserves some attention. But that doesn't automatically mean weighing every gram of chicken you eat. A simpler starting point is to make sure your main meals regularly contain a meaningful protein source. For example: BREAKFAST Eggs, Greek yoghurt, cottage cheese, milk or another suitable option. LUNCH Chicken, tuna, fish, lean meat, tofu or legumes. DINNER Fish, chicken, lean meat, tofu, eggs or legumes. WHEN CONVENIENT Yoghurt, milk, cottage cheese or a protein shake. Research supports the combination of resistance training and adequate protein for building muscle and strength. British Journal of Sports Medicine And remember: The training itself is doing a lot of the heavy lifting. Protein supports the process. It doesn't replace good training.</p>
-<h2>Don't automatically cut carbohydrates because you're trying to lose body fat</h2>
-<p>This is another common mistake. You've decided you want to lose body fat. So: Rice disappears. Bread disappears. Potatoes disappear. But carbohydrates aren't automatically incompatible with fat loss. Australia's dietary guidance includes grain foods—preferably mostly wholegrain or higher-fibre options—as one of the five core food groups, alongside fruit and vegetables. Eat For Health Practical carbohydrate sources might include:</p>
+<p>If you’re resistance training and want to build or maintain muscle, protein deserves some attention.</p>
+<p>But that doesn’t automatically mean weighing every gram of chicken you eat.</p>
+<p>A simpler starting point is to make sure your main meals regularly contain a meaningful protein source.</p>
+<p>For example:</p>
+<p><strong>BREAKFAST</strong></p>
+<p>Eggs, Greek yoghurt, cottage cheese, milk or another suitable option.</p>
+<p><strong>LUNCH</strong></p>
+<p>Chicken, tuna, fish, lean meat, tofu or legumes.</p>
+<p><strong>DINNER</strong></p>
+<p>Fish, chicken, lean meat, tofu, eggs or legumes.</p>
+<p><strong>WHEN CONVENIENT</strong></p>
+<p>Yoghurt, milk, cottage cheese or a protein shake.</p>
+<p>Research supports the combination of resistance training and adequate protein for building muscle and strength. <a class="art-src" href="https://bjsm.bmj.com/content/52/6/376" target="_blank" rel="noopener">British Journal of Sports Medicine</a></p>
+<p>And remember:</p>
+<p><strong>The training itself is doing a lot of the heavy lifting.</strong></p>
+<p>Protein supports the process. It doesn’t replace good training.</p>
+<figure class="art-fig"><img src="assets/journal/how-to-eat-around-your-training-2.jpg" alt="Meal prep container with chicken, rice and broccoli" loading="lazy"></figure>
+<h2>Don’t automatically cut carbohydrates because you’re trying to lose body fat</h2>
+<p>This is another common mistake.</p>
+<p>You’ve decided you want to lose body fat.</p>
+<p>So:</p>
+<p><strong>Rice disappears.</strong></p>
+<p><strong>Bread disappears.</strong></p>
+<p><strong>Potatoes disappear.</strong></p>
+<p>But carbohydrates aren’t automatically incompatible with fat loss.</p>
+<p>Australia’s dietary guidance includes grain foods, preferably mostly wholegrain or higher-fibre options, as one of the five core food groups, alongside fruit and vegetables. <a class="art-src" href="https://www.eatforhealth.gov.au/guidelines/australian-dietary-guidelines-1-5" target="_blank" rel="noopener">Eat For Health</a></p>
+<p>Practical carbohydrate sources might include:</p>
 <ul><li>Oats</li><li>Rice</li><li>Potatoes</li><li>Wholegrain bread</li><li>Wholegrain cereals</li><li>Fruit</li><li>Pasta or noodles</li></ul>
-<p>How much you need will depend partly on your overall energy needs and activity. Someone doing two 45-minute strength sessions per week has different demands from someone training for a marathon. Don't make your nutrition more restrictive than your goal requires.</p>
+<p>How much you need will depend partly on your overall energy needs and activity.</p>
+<p>Someone doing two 45-minute strength sessions per week has different demands from someone training for a marathon.</p>
+<p><strong>Don’t make your nutrition more restrictive than your goal requires.</strong></p>
 <h2>What this looks like on a real workday</h2>
-<p>Let's say your training session is at 6PM. Your day could look something like this: 7:30AM — BREAKFAST Eggs + wholegrain toast + fruit 12:30PM — LUNCH Chicken rice bowl + vegetables 3:30PM — SNACK Greek yoghurt + banana 6:00PM — TRAINING Water during your regular gym session 7:15PM — DINNER Salmon + potatoes + vegetables That's it. No six-meal bodybuilding plan. No alarms telling you when to eat protein. No Sunday spent weighing every container. Just normal food arranged around your actual day.</p>
+<p>Let’s say your training session is at 6PM.</p>
+<p>Your day could look something like this:</p>
+<div class="art-steps"><div class="art-step"><div class="art-step-time">7:30AM</div><div class="art-step-title">Breakfast</div><p>Eggs + wholegrain toast + fruit</p></div><div class="art-step"><div class="art-step-time">12:30PM</div><div class="art-step-title">Lunch</div><p>Chicken rice bowl + vegetables</p></div><div class="art-step"><div class="art-step-time">3:30PM</div><div class="art-step-title">Snack</div><p>Greek yoghurt + banana</p></div><div class="art-step"><div class="art-step-time">6:00PM</div><div class="art-step-title">Training</div><p>Water during your regular gym session</p></div><div class="art-step"><div class="art-step-time">7:15PM</div><div class="art-step-title">Dinner</div><p>Salmon + potatoes + vegetables</p></div></div>
+<p>That’s it.</p>
+<p>No six-meal bodybuilding plan.</p>
+<p>No alarms telling you when to eat protein.</p>
+<p>No Sunday spent weighing every container.</p>
+<p><strong>Just normal food arranged around your actual day.</strong></p>
 <h2>But what happens when the 6PM workout becomes 7:30PM?</h2>
-<p>This is where UHP's approach becomes important. Because your calendar won't always cooperate. A client calls at 4:45PM. Your last meeting runs over. You need to pick up the kids. Suddenly your 6PM session moves to 7:30PM. Your nutrition strategy shouldn't collapse because the calendar changed. Use a simple decision tree: TRAINING AS PLANNED? Follow your normal meals. TRAINING MOVED LATER? If you're hungry, use your planned snack and eat dinner afterwards. TRAINING MOVED EARLIER? If you've eaten recently and feel comfortable, train. Don't force another meal just because the clock says “pre-workout.” TRAINING CANCELLED? Eat normally. You don't need to dramatically change your entire day's nutrition because one gym session moved. That's flexibility.</p>
-<h2>What if you're travelling?</h2>
-<p>Same principles. You're in Melbourne overnight for meetings and want to use the hotel gym. You don't need to search for the perfect sports-nutrition meal. At breakfast: Eggs + toast + fruit or another balanced option. Lunch: Choose something with a protein source, vegetables or salad and whatever other foods suit your needs. Before training: If you're hungry, grab yoghurt or fruit. After training: Have dinner. And if dinner is with a client? Enjoy dinner with the client. You don't need to order the smallest item on the menu because you trained that afternoon. Your training and nutrition should support your life. Your life shouldn't have to revolve around your training and nutrition.</p>
+<p>This is where UHP’s approach becomes important.</p>
+<p>Because your calendar won’t always cooperate.</p>
+<p>A client calls at 4:45PM.</p>
+<p>Your last meeting runs over.</p>
+<p>You need to pick up the kids.</p>
+<p>Suddenly your 6PM session moves to 7:30PM.</p>
+<p>Your nutrition strategy shouldn’t collapse because the calendar changed.</p>
+<p>Use a simple decision tree:</p>
+<h4>TRAINING AS PLANNED?</h4>
+<p>Follow your normal meals.</p>
+<h4>TRAINING MOVED LATER?</h4>
+<p>If you’re hungry, use your planned snack and eat dinner afterwards.</p>
+<h4>TRAINING MOVED EARLIER?</h4>
+<p>If you’ve eaten recently and feel comfortable, train. Don’t force another meal just because the clock says “pre-workout.”</p>
+<h4>TRAINING CANCELLED?</h4>
+<p>Eat normally.</p>
+<p>You don’t need to dramatically change your entire day’s nutrition because one gym session moved.</p>
+<p>That’s flexibility.</p>
+<h2>What if you’re travelling?</h2>
+<p>Same principles.</p>
+<p>You’re in Melbourne overnight for meetings and want to use the hotel gym.</p>
+<p>You don’t need to search for the perfect sports-nutrition meal.</p>
+<p>At breakfast:</p>
+<p><strong>Eggs + toast + fruit</strong></p>
+<p>or another balanced option.</p>
+<p>Lunch:</p>
+<p>Choose something with a protein source, vegetables or salad and whatever other foods suit your needs.</p>
+<p>Before training:</p>
+<p>If you’re hungry, grab yoghurt or fruit.</p>
+<p>After training:</p>
+<p>Have dinner.</p>
+<p>And if dinner is with a client?</p>
+<p><strong>Enjoy dinner with the client.</strong></p>
+<p>You don’t need to order the smallest item on the menu because you trained that afternoon.</p>
+<p>Your training and nutrition should support your life.</p>
+<p><strong>Your life shouldn’t have to revolve around your training and nutrition.</strong></p>
+<figure class="art-fig"><img src="assets/journal/how-to-eat-around-your-training-3.jpg" alt="Restaurant meal being served at a client dinner" loading="lazy"></figure>
 <h2>The UHP Training Nutrition Framework</h2>
-<p>If you don't want to remember anything else, remember four things: 1. DAY Get the fundamentals right across the whole day. 2. FUEL Don't consistently arrive at training starving or uncomfortably full. 3. PROTEIN Include protein-rich foods regularly, particularly if building or maintaining muscle is a goal. 4. BACKUP Have one convenient option available when meetings, travel or family commitments change the schedule. DAY → FUEL → PROTEIN → BACKUP That's enough for most busy business owners to start.</p>
+<p>If you don’t want to remember anything else, remember four things:</p>
+<h4>1. DAY</h4>
+<p>Get the fundamentals right across the whole day.</p>
+<h4>2. FUEL</h4>
+<p>Don’t consistently arrive at training starving or uncomfortably full.</p>
+<h4>3. PROTEIN</h4>
+<p>Include protein-rich foods regularly, particularly if building or maintaining muscle is a goal.</p>
+<h4>4. BACKUP</h4>
+<p>Have one convenient option available when meetings, travel or family commitments change the schedule.</p>
+<p><strong>DAY → FUEL → PROTEIN → BACKUP</strong></p>
+<p>That’s enough for most busy business owners to start.</p>
 <h2>Try this before your next workout</h2>
-<p>Don't change your entire diet. Look at your next training session and answer four questions: When am I training? When will I last eat beforehand? Am I normally hungry or flat at that time? When will I eat afterwards? Then make one adjustment. Maybe you add a banana before your early workout. Maybe you move your afternoon yoghurt closer to your evening session. Maybe you make sure dinner after training has a good protein source. Maybe you realise you're already doing everything you need to do. Don't add complexity unless it solves an actual problem.</p>
+<p>Don’t change your entire diet.</p>
+<p>Look at your next training session and answer four questions:</p>
+<p><strong>When am I training?</strong></p>
+<p><strong>When will I last eat beforehand?</strong></p>
+<p><strong>Am I normally hungry or flat at that time?</strong></p>
+<p><strong>When will I eat afterwards?</strong></p>
+<p>Then make <strong>one adjustment</strong>.</p>
+<p>Maybe you add a banana before your early workout.</p>
+<p>Maybe you move your afternoon yoghurt closer to your evening session.</p>
+<p>Maybe you make sure dinner after training has a good protein source.</p>
+<p>Maybe you realise you’re already doing everything you need to do.</p>
+<p><strong>Don’t add complexity unless it solves an actual problem.</strong></p>
 <h2>The UHP Takeaway</h2>
-<p>For a busy business owner, training shouldn't create another full-time nutrition project. You don't need perfect meal timing. You don't need six meals. You don't need to organise your working day around food. Start with the fundamentals. Eat reasonably well across the day. Fuel your training when you need it. Get adequate protein. Have convenient options for when your calendar changes. At The Ultimate Health Project, that's how we approach nutrition and training: build the system around your business, family and schedule—not the other way around. Because the best nutrition strategy isn't the one that looks perfect on paper. It's the one you can still execute during your busiest week. Want help building your nutrition and training around your actual schedule?</p>
+<p>For a busy business owner, training shouldn’t create another full-time nutrition project.</p>
+<p>You don’t need perfect meal timing.</p>
+<p>You don’t need six meals.</p>
+<p>You don’t need to organise your working day around food.</p>
+<p>Start with the fundamentals.</p>
+<p>Eat reasonably well across the day.</p>
+<p>Fuel your training when you need it.</p>
+<p>Get adequate protein.</p>
+<p>Have convenient options for when your calendar changes.</p>
+<p>At <strong>The Ultimate Health Project</strong>, that’s how we approach nutrition and training: <strong>build the system around your business, family and schedule, not the other way around.</strong></p>
+<p>Because the best nutrition strategy isn’t the one that looks perfect on paper.</p>
+<p><strong>It’s the one you can still execute during your busiest week.</strong></p>
+<p><strong>Want help building your nutrition and training around your actual schedule?</strong></p>
 <div class="art-cta"><a href="book.html" class="bp">Book a Free UHP Health &amp; Performance Call &rarr;</a></div>
-<h2>References</h2><ol class="art-refs"><li>[1] Australian Government – Australian Dietary Guidelines. These support the article's broader nutrition framework: variety across the five food groups, appropriate amounts for energy needs and water as the primary drink. Eat For Health</li><li>[2] Morton RW, et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. British Journal of Sports Medicine, 52:376–384. British Journal of Sports Medicine</li></ol>
+<h2>References</h2><ol class="art-refs"><li>Australian Government: Australian Dietary Guidelines. These support the article’s broader nutrition framework: variety across the five food groups, appropriate amounts for energy needs and water as the primary drink. <a href="https://www.eatforhealth.gov.au/food-essentials/five-food-groups" target="_blank" rel="noopener">Eat For Health</a></li><li>Morton RW, et al. (2018). A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults. British Journal of Sports Medicine, 52:376–384. <a href="https://bjsm.bmj.com/content/52/6/376" target="_blank" rel="noopener">British Journal of Sports Medicine</a></li></ol>
     </div>
   </div>
 </section>
@@ -192,7 +385,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   <div class="rel-img-w"><img class="rel-img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80" alt="Business owner losing focus at his desk in the afternoon" loading="lazy"></div>
   <div class="rel-body">
     <div class="rel-cat">Energy</div>
-    <div class="rel-title">Why Your Energy Crashes at 3PM — and What to Do Before Reaching for Another Coffee</div>
+    <div class="rel-title">Why Your Energy Crashes at 3PM and What to Do Before Reaching for Another Coffee</div>
   </div>
 </a>
 
@@ -227,7 +420,7 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   <div class="wrap">
     <div class="ft-g">
       <div class="ft-bc">
-        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:none"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
+        <a href="index.html" style="display:flex;align-items:center;gap:14px;cursor:pointer"><img src="uhplogo.png" alt="The Ultimate Health Project" class="logo-img"></a>
         <p style="font-size:14px;color:var(--dim);line-height:1.7;max-width:280px;margin-top:16px">More than coaching. Personalised meal plans, breakfast replacements, and AI accountability for busy business owners.</p>
         <p style="font-size:13px;color:var(--dim);margin-top:10px">Regents Park, NSW, Australia</p>
       </div>
@@ -244,9 +437,6 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:80px 0
   const hbg=document.getElementById('hbg'),mm=document.getElementById('mm'),mmx=document.getElementById('mmx');
   if(pt)setTimeout(()=>pt.classList.add('done'),60);
   window.addEventListener('scroll',()=>{const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);nav.classList.toggle('scrolled',window.scrollY>80);if(pb)pb.style.width=(p*100)+'%';},{passive:true});
-  const cur=document.getElementById('cur'),curf=document.getElementById('curf');
-  let mx=0,my=0,cx=0,cy=0;
-  if(cur){document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.cssText=`left:${mx}px;top:${my}px`});(function loop(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;curf.style.cssText=`left:${cx}px;top:${cy}px`;requestAnimationFrame(loop)})();}
   document.querySelectorAll('a,button,.hbg').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('hovering'));el.addEventListener('mouseleave',()=>document.body.classList.remove('hovering'));});
   if(hbg)hbg.addEventListener('click',()=>{mm.classList.add('open');document.body.style.overflow='hidden';});
   if(mmx)mmx.addEventListener('click',()=>{mm.classList.remove('open');document.body.style.overflow='';});
